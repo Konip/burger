@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Button() {
+export default function Basket() {
     return (
         <div>
             <h1>Корзина</h1>

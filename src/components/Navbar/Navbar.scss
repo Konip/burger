@@ -1,0 +1,22 @@
+.navbar {
+    position: relative;
+
+    display: flex;
+    margin: 20px;
+
+    &__link {
+        justify-content: space-between a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    &__logo {
+        position: relative;
+        left: 1%;
+        img {
+            height: 50px;
+            width: 50px;
+        }
+    }
+}
