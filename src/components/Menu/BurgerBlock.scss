@@ -1,7 +1,18 @@
-.burger-block{
-margin: 10px;
-padding: 10px;
-border: solid 2px black;
+.burger-block {
+    margin: 10px;
+    padding: 10px;
+    border: solid 2px black;
 
-width: 400px;
+   
+    &__name {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    &__description {
+        font-size: 13px;
+    }
+    &__cost {
+        font-size: 13px;
+        font-weight: bold;
+    }
 }
