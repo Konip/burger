@@ -3,7 +3,6 @@
     padding: 10px;
     border: solid 2px black;
 
-   
     &__name {
         font-size: 18px;
         font-weight: bold;
@@ -14,5 +13,11 @@
     &__cost {
         font-size: 13px;
         font-weight: bold;
+    }
+    &__img {
+        // height: 183px;
+        // width: 258px;
+        height: 30%;
+        width: 30%;
     }
 }
