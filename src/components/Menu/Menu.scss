@@ -1,9 +1,9 @@
-.menu{
-    .categories{
-
+.menu {
+    .categories {
     }
-    .content{
+    .content {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        margin-left: 50px;
     }
 }

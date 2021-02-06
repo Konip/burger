@@ -3,6 +3,28 @@
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    justify-content: center;
+    // justify-content: center;
     margin-bottom: 20px;
+    margin-left: 30px;
+
+    &-link {
+        margin-left: 17px;
+        span {
+            padding: 10px;
+            font-size: 20px;
+            background: #F9F9F9;
+            border-radius: 30px;
+            &:active{
+                background-color: black;
+               color: white;
+            }
+            &:hover{
+              background-color: rgba($color: #d3b5b5, $alpha: 1.0)
+            }
+        }
+    }
+    &__basket{
+display: flex;
+
+    }
 }

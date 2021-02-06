@@ -1,18 +1,22 @@
 import React from 'react'
 import "./Categories.scss"
 
-export default function Categories({item, onClickItem}) {
+import bakset from '../../assets/basket.svg'
+
+export default function Categories({ item, onClickItem }) {
     return (
         <ul className="categories__item">
-           
+
             {item &&
                 item.map((i, index) => (
-                    <li key={index} onClick={onClickItem ? () => onClickItem(i) : null}>
+                    <li className="categories__item-link" key={index} onClick={onClickItem ? () => onClickItem(i) : null}>
                         <span>{i}</span>
                     </li>
                 ))
             }
-
+            <div className="categories__basket">
+            <img src={bakset} alt=""/>
+            </div>
         </ul>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import "./Navbar.scss"
-import hamberger from "../../assets/hamburger.png"
+import hamburger from "../../assets/hamburger.png"
 
 
 function Navbar() {
@@ -10,7 +10,7 @@ function Navbar() {
 
             <div className="navbar__logo">
                 <NavLink to="/">
-                    <img src={hamberger} alt="hamberger" />
+                    <img src={hamburger} alt="hamberger" />
                 </NavLink>
             </div >
 

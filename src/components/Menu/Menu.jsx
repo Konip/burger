@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
+import db from "../../db.json"
 import BurgerBlock from './BurgerBlock'
 import Categories from './Categories'
-import Basket from './Basket'
 import "./Menu.scss"
 
-import db from "../../db.json"
 
 
 export default function Menu() {
@@ -25,7 +24,7 @@ export default function Menu() {
                     db[activeItem].map((el, index) => (
 
                         <BurgerBlock key={index} name={el.name}
-                            description={el.description} cost={el.cost} img={el.img} />
+                            description={el.description} price={el.price} img={el.img} />
                     ))
                 }
             </div>
