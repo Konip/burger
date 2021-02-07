@@ -44,6 +44,7 @@ export default function Menu() {
             setCount(b)
         }
     }
+
     return (
         <div className="menu">
             <Basket totalPrice={totalPrice} count={count} />
@@ -57,7 +58,7 @@ export default function Menu() {
                 {
                     db[activeItem].map((el, index) => (
 
-                        <BurgerBlock key={el.img} name={el.name}
+                        <BurgerBlock key={el.img} name={el.name} 
                             description={el.description} price={el.price} img={el.img}
                             onClickAdd={i => { addItem(i) }} onClickDel={i => { deleteItem(i) }}
                              c={c} />
