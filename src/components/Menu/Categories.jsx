@@ -1,7 +1,6 @@
 import React from 'react'
 import "./Categories.scss"
 
-import bakset from '../../assets/basket.svg'
 
 export default function Categories({ item, onClickItem }) {
     return (
@@ -14,9 +13,6 @@ export default function Categories({ item, onClickItem }) {
                     </li>
                 ))
             }
-            <div className="categories__basket">
-            <img src={bakset} alt=""/>
-            </div>
         </ul>
     )
 }
