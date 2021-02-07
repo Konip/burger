@@ -10,10 +10,17 @@ export default function Menu() {
     const [activeItem, setActiveItem] = useState("Бургеры стандартные")
     const [totalPrice, setTotalPrice] = useState(0)
     const [count, setCount] = useState(0)
+   
+    const c = (price) => {
 
-    const c = (a, b) => {
-        setTotalPrice(a)
-        setCount(b)
+        let pric = totalPrice
+        let coun = count
+
+        pric += price;
+        coun++;
+
+        setTotalPrice(pric)
+        setCount(coun)
     }
     const addItem = (i) => {
         let a = totalPrice
@@ -50,10 +57,10 @@ export default function Menu() {
                 {
                     db[activeItem].map((el, index) => (
 
-                        <BurgerBlock key={index} name={el.name}
+                        <BurgerBlock key={el.img} name={el.name}
                             description={el.description} price={el.price} img={el.img}
                             onClickAdd={i => { addItem(i) }} onClickDel={i => { deleteItem(i) }}
-                            count={count} c={c}/>
+                             c={c} />
                     ))
                 }
             </div>

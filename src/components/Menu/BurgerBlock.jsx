@@ -17,7 +17,7 @@ export default function BurgerBlock({ name, description, price, img, onClickAdd,
 
         setTotalPrice(a)
         setCount(b)
-        c(totalPrice, count)
+        c(price)
     }
     return (
         <div className="block">

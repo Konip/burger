@@ -8,7 +8,8 @@ export default function Categories({ item, onClickItem }) {
 
             {item &&
                 item.map((i, index) => (
-                    <li className="categories__item-link" key={index} onClick={onClickItem ? () => onClickItem(i) : null}>
+                    <li className="categories__item-link"
+                        key={index} onClick={onClickItem ? () => onClickItem(i) : null}>
                         <span>{i}</span>
                     </li>
                 ))
