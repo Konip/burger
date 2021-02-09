@@ -3,22 +3,9 @@ import "./BurgerBlock.scss"
 // import plus from "../../assets/plus.svg"
 import plus from "../../assets/plus.svg"
 
-export default function BurgerBlock({ name, description, price, img, onClickAdd, onClickDel, c }) {
+export default function BurgerBlock({ name, description, price, img, activeItem, onClickItem }) {
 
-    const [totalPrice, setTotalPrice] = useState(0)
-    const [count, setCount] = useState(0)
 
-    const a = (price) => {
-        let a = totalPrice
-        let b = count
-
-        a += price;
-        b++;
-
-        setTotalPrice(a)
-        setCount(b)
-        c(price)
-    }
     return (
         <div className="block">
 
@@ -32,7 +19,7 @@ export default function BurgerBlock({ name, description, price, img, onClickAdd,
                         <p>{name}</p>
                     </div>
                     <div className="burger-block__price">
-                        <p>{`${price} руб`}</p>
+                        <p>{1}</p>
                     </div>
                 </div>
 
@@ -53,10 +40,11 @@ export default function BurgerBlock({ name, description, price, img, onClickAdd,
             <div className="buttons">
 
                 {/* <button onClick={() => onClickDel(price)} >Удалить</button> */}
-                <button onClick={() => a(price)}>
+                <button onClick={onClickItem ? () => onClickItem({ name, price, img, activeItem }) &&
+                    console.log({ name, price, img, activeItem }) : null}>
                     <img className="svg" src={plus} alt="" />
                     Добавить
-                    {count}
+
                 </button>
             </div>
         </div>

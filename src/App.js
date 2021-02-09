@@ -11,17 +11,9 @@ function App() {
     <div className="App">
       <Navbar />
 
-      <Route exact path="/" render={() => {
-        return (
-          <Home />
-        )
-      }} />
+      <Route exact path="/" component={Home}/>
 
-      <Route path="/menu" render={() => {
-        return (
-          <Menu />
-        )
-      }} />
+      <Route path="/menu" component={Menu} />
     </div>
   );
 }
