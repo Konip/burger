@@ -5,7 +5,7 @@ import "./Menu.scss"
 import db from "../../db.json"
 import Basket from './Basket'
 import { useDispatch } from 'react-redux';
-import {addBurgerAC} from "../../redux/basket"
+import {addBurgerAC,delBurgerAC} from "../../redux/basket"
 export default function Menu() {
 
 const dispatch = useDispatch()
@@ -33,7 +33,8 @@ const dispatch = useDispatch()
 
                         <BurgerBlock key={el.img} name={el.name} 
                             description={el.description} price={el.price} img={el.img}
-                            onClickItem={ item => dispatch(addBurgerAC(item))} activeItem={activeItem}
+                            onClickAdd={ item => dispatch(addBurgerAC(item))} activeItem={activeItem}
+                            onClickDel = {item => dispatch(delBurgerAC(item))}
                              />
                     ))
                 }
