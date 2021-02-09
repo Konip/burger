@@ -1,9 +1,7 @@
 import { combineReducers, createStore, } from "redux";
-import burgerStandartReducer from "./burger-standart-reducer"
 import basket from "./basket"
 
 let reducers = combineReducers({
-    // burgerStandart: burgerStandartReducer,
     basket: basket,
 })
 
