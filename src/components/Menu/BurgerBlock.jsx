@@ -3,7 +3,8 @@ import "./BurgerBlock.scss"
 // import plus from "../../assets/plus.svg"
 import plus from "../../assets/plus.svg"
 
-export default function BurgerBlock({ name, description, price, img, activeItem, onClickAdd, onClickDel }) {
+export default function BurgerBlock({ name, description, price, img, id, activeItem, onClickAdd, 
+    onClickDel, addedCound }) {
 
 
     return (
@@ -19,7 +20,7 @@ export default function BurgerBlock({ name, description, price, img, activeItem,
                         <p>{name}</p>
                     </div>
                     <div className="burger-block__price">
-                        <p>{1}</p>
+                        <p>{price}</p>
                     </div>
                 </div>
 
@@ -41,7 +42,8 @@ export default function BurgerBlock({ name, description, price, img, activeItem,
 
                 {/* <button onClick={() => onClickDel(price)} >Удалить</button> */}
                 <button onClick={onClickDel ? () => onClickDel({ name, activeItem }) : null}>Удалить</button>
-                <button onClick={onClickAdd ? () => onClickAdd({ name, price, img, activeItem }) : null}>
+                <button onClick={onClickAdd ? () => onClickAdd({ name, price, img, activeItem, id }) : null}>
+                    {addedCound}
                     <img className="svg" src={plus} alt="" />
                     Добавить
                 </button>

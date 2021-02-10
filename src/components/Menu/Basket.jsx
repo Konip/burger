@@ -2,7 +2,7 @@ import React from 'react'
 import "./Basket.scss"
 import bakset from '../../assets/basket.svg'
 
-export default function Basket({ totalPrice, count }) {
+export default function Basket({ totalPrice, totalCount }) {
     return (
         <div className="basket">
 
@@ -12,7 +12,7 @@ export default function Basket({ totalPrice, count }) {
                 <img src={bakset} alt="" />
             </div>
 
-            <div>{count}</div>
+            <div>{totalCount}</div>
         </div>
     )
 }
