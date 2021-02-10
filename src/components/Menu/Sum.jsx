@@ -1,14 +1,14 @@
 import React from 'react'
-import "./Basket.scss"
+import "./Sum.scss"
 import bakset from '../../assets/basket.svg'
 
-export default function Basket({ totalPrice, totalCount }) {
+export default function Sum({ totalPrice, totalCount }) {
     return (
-        <div className="basket">
+        <div className="sum">
 
             <div>{totalPrice}</div>
 
-            <div className="basket__img">
+            <div className="sum__img">
                 <img src={bakset} alt="" />
             </div>
 

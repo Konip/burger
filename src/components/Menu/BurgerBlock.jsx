@@ -3,8 +3,8 @@ import "./BurgerBlock.scss"
 // import plus from "../../assets/plus.svg"
 import plus from "../../assets/plus.svg"
 
-export default function BurgerBlock({ name, description, price, img, id, activeItem, onClickAdd, 
-    onClickDel, addedCound }) {
+export default function BurgerBlock({ name, description, price, img, id,
+    activeItem, onClickAdd, onClickDel, addedCound }) {
 
 
     return (

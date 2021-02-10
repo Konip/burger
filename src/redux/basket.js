@@ -17,24 +17,6 @@ let initialState = {
 
 const basket = (state = initialState, { type, data }) => {
 
-    // switch (type) {
-    //     case ADD_BURGER:
-    //         const items = {
-    //             ...state.items,
-    //                 [data.activeItem]: !state.items[data.activeItem]
-    //                 ? [data]
-    //                 : [...state.items[data.activeItem], data]
-    //         }
-
-    //         const totalBurger = [].concat.apply([], Object.values(items))
-    //         const totalPrice = totalBurger.reduce((sum, obj) => obj.price + sum, 0)
-
-    //         return {
-    //             ...state,
-    //             items:items,
-    //             totalCount: totalBurger.length,
-    //             totalPrice: totalPrice
-    //         }
     switch (type) {
         case ADD_BURGER:
             const items = {

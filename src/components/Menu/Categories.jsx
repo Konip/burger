@@ -9,6 +9,7 @@ export default function Categories({ item, onClickItem, activeItem }) {
 
             {item &&
                 item.map((i, index) => (
+                    
                     <li className="categories__item-link"
                     // <li className={classNames("categories__item-link", { active: activeItem === i })}
                         key={index} onClick={onClickItem ? () =>onClickItem(i) : null}>
