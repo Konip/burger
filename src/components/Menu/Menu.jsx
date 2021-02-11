@@ -5,7 +5,7 @@ import "./Menu.scss"
 import db from "../../db.json"
 import Sum from './Sum'
 import { useDispatch, useSelector } from 'react-redux';
-import { addBurgerAC, delBurgerAC } from "../../redux/basket"
+import { addBurgerAC, deleteOneBurgerAC } from "../../redux/basket"
 import { NavLink } from 'react-router-dom'
 
 
@@ -17,8 +17,6 @@ export default function Menu() {
     const totalCount = useSelector(({ basket }) => basket.totalCount)
     const burgerCountBlock = useSelector(({ basket }) => basket.items[activeItem])
     const totalPrice = useSelector(({ basket }) => basket.totalPrice)
-
-    // console.log(burgerCountBlock)
 
     const seachCount = (burgerCountBlock, el) => {
         let entry = 0
@@ -52,7 +50,7 @@ export default function Menu() {
                         <BurgerBlock key={`${el.img}${el.price}`} name={el.name} description={el.description}
                             price={el.price} img={el.img} id={el.id}
                             onClickAdd={item => dispatch(addBurgerAC(item))} activeItem={activeItem}
-                            onClickDel={item => dispatch(delBurgerAC(item))}
+                            onClickDel={item => dispatch(deleteOneBurgerAC(item))}
                             addedCound={burgerCountBlock && seachCount(burgerCountBlock, el)}
                         />
                     ))

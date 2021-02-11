@@ -1,11 +1,12 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 import BurgerBlockBasket from './BurgerBlockBasket';
-
+import clearAC from "../../redux/basket"
+import { deleteGroupBurgerAC } from "../../redux/basket"
 
 
 export default function Basket() {
-
+    const dispatch = useDispatch()
     const { items, totalPrice } = useSelector(({ basket }) => basket)
 
     const arr = [].concat.apply([], Object.values(items));
@@ -26,6 +27,7 @@ export default function Basket() {
         let count = null
         let totalPrice = null
         let img = null
+        let activeItem = null
 
         arr.map(a => {
             if (a.name === arrEntry[index]) {
@@ -33,6 +35,7 @@ export default function Basket() {
                 img = a.img
                 totalPrice += a.price
                 count++
+                activeItem = a.activeItem
             }
         })
 
@@ -41,19 +44,26 @@ export default function Basket() {
             price: totalPrice,
             count: count,
             img: img,
+            activeItem: activeItem
         })
     }
     console.log(totalArr)
+
+    const a = () => {
+        dispatch(clearAC())
+    }
 
     return (
         <div className="basket">
             {
                 totalArr.map(t => (
-                    <BurgerBlockBasket name={t.name} price={t.price} count={t.count} img={t.img} />
+                    <BurgerBlockBasket name={t.name} price={t.price} count={t.count} img={t.img}
+                    activeItem={t.activeItem} onClickDel={i => dispatch(deleteGroupBurgerAC(i))} />
                 ))
             }
             <div className="basket__total-price">
                 <h2>Сумма заказа {totalPrice}</h2>
+                <button onClick={a}>Очистить корзину</button>
             </div>
         </div>
     )

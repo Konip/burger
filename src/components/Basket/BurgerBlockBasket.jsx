@@ -1,7 +1,7 @@
 import React from 'react'
 import "./BurgerBlockBasket.scss"
 
-export default function BurgerBlockBasket({ name, price, count, img }) {
+export default function BurgerBlockBasket({ name, price, count, img, onClickDel, activeItem }) {
     return (
         <div className="block">
             <div className="burger-block">
@@ -19,9 +19,7 @@ export default function BurgerBlockBasket({ name, price, count, img }) {
                     </div>
                 </div>
 
-                <div className="burger-block__mask">
-                    <p>{count}</p>
-                </div>
+                <button onClick={onClickDel ? () => onClickDel({ activeItem, name }): null}>Удалить бургер</button>
             </div>
         </div>
     )
