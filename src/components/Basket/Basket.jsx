@@ -11,7 +11,7 @@ export default function Basket() {
         <div className="basket">
             <h1>Корзина</h1>
             <h2>Сумма заказа {totalPrice}</h2>
-            <h2>Всего {arr.length}</h2>
+            {/* <h2>Всего {arr.length}</h2> */}
             <span>{console.log(arr)}</span>
         </div>
     )

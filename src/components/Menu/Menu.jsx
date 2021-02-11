@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addBurgerAC, delBurgerAC } from "../../redux/basket"
 import { NavLink } from 'react-router-dom'
 
+
 export default function Menu() {
 
     const [activeItem, setActiveItem] = useState("Бургеры стандартные")
@@ -16,6 +17,8 @@ export default function Menu() {
     const totalCount = useSelector(({ basket }) => basket.totalCount)
     const burgerCountBlock = useSelector(({ basket }) => basket.items[activeItem])
     const totalPrice = useSelector(({ basket }) => basket.totalPrice)
+
+    // console.log(burgerCountBlock)
 
     const seachCount = (burgerCountBlock, el) => {
         let entry = 0

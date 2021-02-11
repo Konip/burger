@@ -54,6 +54,3 @@ const basket = (state = initialState, { type, data }) => {
 export default basket
 export const addBurgerAC = (data) => ({ type: ADD_BURGER, data })
 export const delBurgerAC = (data) => ({ type: DELETE_BURGER, data })
-
-
-
