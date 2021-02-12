@@ -1,7 +1,7 @@
 
 const ADD_BURGER = "ADD_BURGER"
 const DELETE_ONE_BURGER = "DELETE_BURGER"
-const CLEAR = "CLEAR"
+const CLEAR_BASKET = "CLEAR_BASKET"
 const DELETE_GROUP_BURGER = "DELETE_GROUP_BURGER"
 
 let initialState = {
@@ -22,7 +22,7 @@ let initialState = {
 const basket = (state = initialState, action) => {
 
     switch (action.type) {
-        case ADD_BURGER:
+        case ADD_BURGER: {
             const items = {
                 ...state.items,
                 [action.data.activeItem]: !state.items[action.data.activeItem]
@@ -39,23 +39,44 @@ const basket = (state = initialState, action) => {
                 totalCount: totalBurger.length,
                 totalPrice: totalPrice
             }
-
-        case DELETE_ONE_BURGER:
-            const newState = state[action.data.activeItem].map(index => {
-                Object.values(index).filter(i => i !== action.data.name)
-            })
-            return {
-                ...state,
-                [action.data.activeItem]: newState
+        }
+        case DELETE_ONE_BURGER: {
+            const newItems = {
+                ...state.items
             }
-        case CLEAR:
+
+            const arr = []
+            let CopyTotalCount = state.totalCount
+            let CopyTotalPrice = state.totalPrice
+            let i = false
+            newItems[action.data.activeItem].map(n => {
+                if (n.name !== action.data.name || i === true) arr.push(n)
+                else i = true 
+            })
+
+            CopyTotalCount--
+            CopyTotalPrice -= action.data.price
             return {
                 ...state,
-                items: {},
+                items: {
+                    ...state.items,
+                    [action.data.activeItem]: arr
+                },
+                totalCount: CopyTotalCount,
+                totalPrice: CopyTotalPrice,
+            }
+        }
+        case CLEAR_BASKET: {
+            return {
+                ...state,
+                items: {
+                    ...state.items
+                },
                 totalCount: 0,
                 totalPrice: 0,
             }
-        case DELETE_GROUP_BURGER:
+        }
+        case DELETE_GROUP_BURGER: {
             const newItems = {
                 ...state.items
             }
@@ -67,7 +88,6 @@ const basket = (state = initialState, action) => {
             newItems[action.data.activeItem].map(n => {
                 if (n.name !== action.data.name) {
                     arr.push(n)
-
                 }
                 else {
                     CopyTotalCount--
@@ -83,6 +103,7 @@ const basket = (state = initialState, action) => {
                 totalCount: CopyTotalCount,
                 totalPrice: CopyTotalPrice,
             }
+        }
         default:
             return state
     }
@@ -90,5 +111,5 @@ const basket = (state = initialState, action) => {
 export default basket
 export const addBurgerAC = (data) => ({ type: ADD_BURGER, data })
 export const deleteOneBurgerAC = (data) => ({ type: DELETE_ONE_BURGER, data })
-export const clearAC = () => ({ type: CLEAR })
+export const clearAC = () => ({ type: CLEAR_BASKET })
 export const deleteGroupBurgerAC = (data) => ({ type: DELETE_GROUP_BURGER, data })

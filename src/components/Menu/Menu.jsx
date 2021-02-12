@@ -12,18 +12,30 @@ import { NavLink } from 'react-router-dom'
 export default function Menu() {
 
     const [activeItem, setActiveItem] = useState("Бургеры стандартные")
+    const [count, setCount] = useState(0)
 
     const dispatch = useDispatch()
     const totalCount = useSelector(({ basket }) => basket.totalCount)
     const burgerCountBlock = useSelector(({ basket }) => basket.items[activeItem])
     const totalPrice = useSelector(({ basket }) => basket.totalPrice)
 
+    // const seachCount = (burgerCountBlock, el) => {
+    //     let entry = 0
+    //     burgerCountBlock.map(i => {
+    //         if (i.id === el.id) entry++
+    //     })
+    //     return entry
+    // }
     const seachCount = (burgerCountBlock, el) => {
-        let entry = 0
+        let entry = 0 //3
+        
+        console.log(burgerCountBlock)
         burgerCountBlock.map(i => {
             if (i.id === el.id) entry++
+               //2
         })
         return entry
+        
     }
 
     return (
@@ -45,7 +57,7 @@ export default function Menu() {
 
             <div className="content">
                 {
-                    db[activeItem].map((el, index) => (
+                    db[activeItem].map(el => (
 
                         <BurgerBlock key={`${el.img}${el.price}`} name={el.name} description={el.description}
                             price={el.price} img={el.img} id={el.id}

@@ -7,7 +7,7 @@ import { deleteGroupBurgerAC } from "../../redux/basket"
 
 export default function Basket() {
     const dispatch = useDispatch()
-    const { items, totalPrice } = useSelector(({ basket }) => basket)
+    const { items, totalPrice,totalCount } = useSelector(({ basket }) => basket)
 
     const arr = [].concat.apply([], Object.values(items));
     // const totalPrice = totalBurger.reduce((sum, obj) => obj.price + sum, 0)
@@ -63,7 +63,8 @@ export default function Basket() {
             }
             <div className="basket__total-price">
                 <h2>Сумма заказа {totalPrice}</h2>
-                <button onClick={a}>Очистить корзину</button>
+                <h2>Общее количество {totalCount}</h2>
+                <button onClick={() =>a()}>Очистить корзину</button>
             </div>
         </div>
     )
