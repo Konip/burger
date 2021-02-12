@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./BurgerBlock.scss"
-// import plus from "../../assets/plus.svg"
 import plus from "../../assets/plus.svg"
 
 export default function BurgerBlock({ name, description, price, img, id,
     activeItem, onClickAdd, onClickDel, addedCound }) {
-
 
     return (
         <div className="block">
@@ -30,7 +28,6 @@ export default function BurgerBlock({ name, description, price, img, id,
             </div>
             <div className="buttons">
 
-                {/* <button onClick={() => onClickDel(price)} >Удалить</button> */}
                 <button onClick={onClickDel ? () => onClickDel({ name, activeItem, price }) : null}>Удалить</button>
                 <button onClick={onClickAdd ? () => onClickAdd({ name, price, img, activeItem, id }) : null}>
                     {addedCound}
