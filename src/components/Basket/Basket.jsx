@@ -68,7 +68,6 @@ export default function Basket() {
             <div className="basket__total-price">
                 <h2>Сумма заказа {totalPrice}</h2>
                 <h2>Общее количество {totalCount}</h2>
-                <button onClick={() => a}>Очистить корзину</button>
             </div>
         </div>
     )
