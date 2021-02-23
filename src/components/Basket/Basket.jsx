@@ -14,7 +14,6 @@ export default function Basket() {
 
     let arrEntry = []
     let totalArr = []
-    // создаем массив уникальных имен
     arr.map(a => {
         if (arrEntry.length == 0) arrEntry.push(a.name)
 

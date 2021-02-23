@@ -15,10 +15,7 @@
     "react-scripts": "4.0.2",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-<<<<<<< HEAD
-=======
     "video-react": "^0.14.1",
->>>>>>> 6c71816cf8d8845fec69733b8b17716064e92a91
     "web-vitals": "^1.1.0"
   },
   "scripts": {
