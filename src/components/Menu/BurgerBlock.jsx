@@ -13,11 +13,11 @@ export default function BurgerBlock({ name, description, price, img, id,
                     <div className="burger-block__img" style={{ backgroundImage: `url(${img})` }}></div>
                 </div>
 
-                <div className="burger-block__info">
-                    <div className="burger-block__title">
+                <div className="info">
+                    <div className="info__title">
                         <p>{name}</p>
                     </div>
-                    <div className="burger-block__price">
+                    <div className="info__price">
                         <p>{price}</p>
                     </div>
                 </div>
@@ -29,10 +29,11 @@ export default function BurgerBlock({ name, description, price, img, id,
             <div className="buttons">
 
                 <button onClick={onClickDel ? () => onClickDel({ name, activeItem, price }) : null}>Удалить</button>
+
                 <button onClick={onClickAdd ? () => onClickAdd({ name, price, img, activeItem, id }) : null}>
-                    {addedCound}
                     <img className="svg" src={plus} alt="" />
-                    Добавить
+                    <span>Добавить</span>
+                    {addedCound}
                 </button>
             </div>
         </div>

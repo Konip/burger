@@ -31,7 +31,7 @@ export default function Menu() {
     return (
         <div className="menu">
 
-            <div className="sum">
+            <div>
                 <NavLink to="/basket">
                     <Sum totalPrice={totalPrice} totalCount={totalCount} />
                 </NavLink>

@@ -1,9 +1,8 @@
 .navbar {
     position: relative;
     display: flex;
-    // margin: 8px;
+    margin-bottom: 20px;
     
-
     &__logo {
         position: relative;
 
@@ -28,12 +27,18 @@
         color: white;
 
         a {
-            font-size: 25px;
+            font-size: 21px;
             text-decoration: none;
             color: inherit;
+            text-transform: uppercase;
+
             &:hover {
-                font-weight: bold; 
-                font-size: 32px;
+                // font-weight: bold; 
+                // font-size: 32px;
+                
+                color: yellow;
+                text-decoration: underline;
+                
             }
         }
         

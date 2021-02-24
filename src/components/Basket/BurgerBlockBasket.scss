@@ -1,8 +1,8 @@
-.block {
+.block-basket {
 
-    height: 200px;
-    width: 200px;
-    .burger-block {
+    // height: 200px;
+    // width: 200px;
+    .block {
         display: flex;
         flex-direction: column;
         margin: 10px;
@@ -19,7 +19,7 @@
             justify-content: center;
             margin-bottom: 10px;
 
-            .burger-block__img {
+            .block__img {
                 height: 100%;
                 width: 50%;
                 background-repeat: no-repeat;

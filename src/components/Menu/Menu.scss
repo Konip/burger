@@ -2,8 +2,8 @@
     .categories {
     }
     .content {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        margin-left: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
     }
 }

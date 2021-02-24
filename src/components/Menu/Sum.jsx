@@ -6,7 +6,7 @@ export default function Sum({ totalPrice, totalCount }) {
     return (
         <div className="sum">
 
-            <div>{totalPrice}</div>
+            <div>{`${totalPrice} ₽`}</div>
 
             <div className="sum__img">
                 <img src={bakset} alt="" />

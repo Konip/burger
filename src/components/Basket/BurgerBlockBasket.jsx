@@ -5,17 +5,17 @@ export default function BurgerBlockBasket({ name, totalPrice, count, img, onClic
     onClickDel1, onClickAdd, id, price }) {
         
     return (
-        <div className="block">
-            <div className="burger-block">
-                <div className="burger-block__wrapper-img">
-                    <div className="burger-block__img" style={{ backgroundImage: `url(${img})` }}></div>
+        <div className="block-basket">
+            <div className="block">
+                <div className="block__wrapper-img">
+                    <div className="block__img" style={{ backgroundImage: `url(${img})` }}></div>
                 </div>
 
-                <div className="burger-block__info">
-                    <div className="burger-block__title">
+                <div className="block__info">
+                    <div className="block__title">
                         {name}
                     </div>
-                    <div className="burger-block__price">
+                    <div className="block__price">
                         <p>Цена {price}</p>
                         <p>Общая сумма {totalPrice}</p>
                         <p>количество {count}</p>
