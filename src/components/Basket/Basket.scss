@@ -5,13 +5,29 @@
     color: white;
     justify-content: center;
     align-items: center;
-
-    .total-price {
-        display: flex;
-        justify-content: space-between;
-        
-        span {
-            display: inline-block;
+    font-size: 23px;
+    .wrap {
+        .total-price {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+        }
+        h1{
+            margin: 40px;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            .back,
+            .buy {
+                border: 2px solid white;
+                border-radius: 30px;
+                padding: 12px;
+                a{
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
         }
     }
 }
