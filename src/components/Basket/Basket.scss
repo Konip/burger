@@ -1,0 +1,17 @@
+.basket {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    align-items: center;
+
+    .total-price {
+        display: flex;
+        justify-content: space-between;
+        
+        span {
+            display: inline-block;
+        }
+    }
+}

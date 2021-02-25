@@ -4,6 +4,7 @@ import BurgerBlockBasket from './BurgerBlockBasket';
 import clearAC from "../../redux/basket"
 import { deleteGroupBurgerAC } from "../../redux/basket"
 import { addBurgerAC, deleteOneBurgerAC } from "../../redux/basket"
+import "./Basket.scss"
 
 
 export default function Basket() {
@@ -64,9 +65,10 @@ export default function Basket() {
                         onClickDel1={item => dispatch(deleteOneBurgerAC(item))} />
                 ))
             }
-            <div className="basket__total-price">
-                <h2>Сумма заказа {totalPrice}</h2>
-                <h2>Общее количество {totalCount}</h2>
+            
+            <div className="total-price">
+                <span>Общее количество {totalCount} </span>
+                <span>Сумма заказа {`${totalPrice} ₽`}</span>
             </div>
         </div>
     )

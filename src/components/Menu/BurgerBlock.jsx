@@ -1,6 +1,7 @@
 import React from 'react'
 import "./BurgerBlock.scss"
 import plus from "../../assets/plus.svg"
+import minus from "../../assets/minus.svg"
 
 export default function BurgerBlock({ name, description, price, img, id,
     activeItem, onClickAdd, onClickDel, addedCound }) {
@@ -18,7 +19,7 @@ export default function BurgerBlock({ name, description, price, img, id,
                         <p>{name}</p>
                     </div>
                     <div className="info__price">
-                        <p>{price}</p>
+                        <p>{`${price} ₽`}</p>
                     </div>
                 </div>
 
@@ -28,7 +29,10 @@ export default function BurgerBlock({ name, description, price, img, id,
             </div>
             <div className="buttons">
 
-                <button onClick={onClickDel ? () => onClickDel({ name, activeItem, price }) : null}>Удалить</button>
+                <button onClick={onClickDel ? () => onClickDel({ name, activeItem, price }) : null}>
+                <img className="svg" src={minus} alt=""/>
+                    <span>Удалить</span>
+                   </button>
 
                 <button onClick={onClickAdd ? () => onClickAdd({ name, price, img, activeItem, id }) : null}>
                     <img className="svg" src={plus} alt="" />
