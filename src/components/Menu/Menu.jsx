@@ -14,23 +14,11 @@ export default function Menu() {
     const [activeItem, setActiveItem] = useState("Бургеры стандартные")
 
     const dispatch = useDispatch()
-    const totalCount = useSelector(({ basket }) => basket.totalCount)
-    const burgerCountBlock = useSelector(({ basket }) => basket.items[activeItem])
-    const totalPrice = useSelector(({ basket }) => basket.totalPrice)
-
-    const seachCount = (burgerCountBlock, el) => {
-  
-        let entry = 0
-
-        burgerCountBlock.map(i => {
-            if (i.name === el.name) entry++
-        })
-        return entry
-    }
+    const { totalPrice, totalCount, totalInfo, totalEntry } = useSelector(({ basket }) => basket)
 
     return (
         <div className="menu">
-
+            {console.log("hello")}
             <div>
                 <NavLink to="/basket">
                     <Sum totalPrice={totalPrice} totalCount={totalCount} />
@@ -52,7 +40,8 @@ export default function Menu() {
                             price={el.price} img={el.img} id={el.id}
                             onClickAdd={item => dispatch(addBurgerAC(item))} activeItem={activeItem}
                             onClickDel={item => dispatch(deleteOneBurgerAC(item))}
-                            addedCound={burgerCountBlock && seachCount(burgerCountBlock, el)}
+                            count={totalEntry.includes(el.name) ? totalInfo[totalEntry.indexOf(el.name)].count : 0}
+                            groupPrice={totalEntry.includes(el.name) ? totalInfo[totalEntry.indexOf(el.name)].totalPrice : 0}
                         />
                     ))
                 }

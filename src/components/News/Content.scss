@@ -1,0 +1,27 @@
+.cont-text {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 1480px;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 15px;
+    height: 100%;
+    background-size: contain;
+    
+        h1 {
+            margin: 30px 0;
+            font-size: 3em;
+        }
+        p {
+            font-size: 1.7em;
+            margin: 30px 0;
+            line-height: 1.7em;
+        }
+        li {
+            font-size: 1.7em;
+        }
+    
+}

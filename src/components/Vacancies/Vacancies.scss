@@ -1,0 +1,52 @@
+.vacancies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 1480px;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 15px;
+    
+    &-text {
+        margin-top: 30px;
+        color: white;
+        font-size: 1.7em;
+        line-height: 1.7em;
+    }
+    &-city {
+        display: flex;
+        margin: 20px 0;
+        .block {
+            background-color: white;
+            color: red;
+            height: 50px;
+            width: 690px;
+            margin: 0 10px;
+            font-size: 1.7em;
+            font-weight: 600;
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .contacts{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        font-size: 1.7em;
+        // padding: 0 15px;
+        .contact{
+            .tel{
+                text-decoration: none;
+                color: #ef796e;
+                padding: 0 20px;
+            }
+            span{
+                color: white;
+            }
+        }
+    }
+}

@@ -4,7 +4,7 @@ import plus from "../../assets/plus.svg"
 import minus from "../../assets/minus.svg"
 
 export default function BurgerBlock({ name, description, price, img, id,
-    activeItem, onClickAdd, onClickDel, addedCound }) {
+    activeItem, onClickAdd, onClickDel, count, groupPrice }) {
 
     return (
         <div className="block">
@@ -29,15 +29,15 @@ export default function BurgerBlock({ name, description, price, img, id,
             </div>
             <div className="buttons">
 
-                <button onClick={onClickDel ? () => onClickDel({ name, activeItem, price }) : null}>
-                <img className="svg" src={minus} alt=""/>
+                <button onClick={() => onClickDel({ name, activeItem, price })}>
+                    <img className="svg" src={minus} alt="" />
                     <span>Удалить</span>
-                   </button>
-
-                <button onClick={onClickAdd ? () => onClickAdd({ name, price, img, activeItem, id }) : null}>
+                </button>
+                {`${groupPrice} ₽`}
+                <button onClick={() => onClickAdd({ name, price, img, activeItem, id })}>
                     <img className="svg" src={plus} alt="" />
                     <span>Добавить</span>
-                    {addedCound}
+                    {count}
                 </button>
             </div>
         </div>

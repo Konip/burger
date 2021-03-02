@@ -10,57 +10,16 @@ import { NavLink } from 'react-router-dom';
 
 export default function Basket() {
     const dispatch = useDispatch()
-    const { items, totalPrice, totalCount } = useSelector(({ basket }) => basket)
+    const { items, totalPrice, totalCount, totalInfo } = useSelector(({ basket }) => basket)
 
-    const arr = [].concat.apply([], Object.values(items));
-
-    let arrEntry = []
-    let oldArrEntry = []
-    let totalArr = []
-    arr.map(a => {
-
-        if (arrEntry.length == 0) arrEntry.unshift(a.name)
-
-        if (!arrEntry.includes(a.name)) arrEntry.unshift(a.name)
-
-    })
-
-    for (let index = 0; index < arrEntry.length; index++) {
-        let name = null
-        let count = null
-        let totalPrice = null
-        let img = null
-        let activeItem = null
-        let price = null
-
-        arr.map(a => {
-            if (a.name === arrEntry[index]) {
-                name = a.name
-                img = a.img
-                totalPrice += a.price
-                count++
-                activeItem = a.activeItem
-                price = a.price
-            }
-        })
-
-        totalArr.unshift({
-            name: name,
-            totalPrice: totalPrice,
-            count: count,
-            img: img,
-            activeItem: activeItem,
-            price: price,
-        })
-    }
-    console.log(totalArr)
+   
     return (
         <div className="basket">
-            {totalArr.length != 0
+            {totalInfo.length != 0
                 ?
                 <div className="wrap">
                     {
-                        totalArr.map(t => (
+                        totalInfo.map(t => (
                             <BurgerBlockBasket key={`${t.img}${t.price}`} name={t.name} totalPrice={t.totalPrice}
                                 count={t.count} img={t.img} id={t.id} price={t.price}
                                 activeItem={t.activeItem} onClickDelGroup={i => dispatch(deleteGroupBurgerAC(i))}
@@ -70,20 +29,16 @@ export default function Basket() {
                     }
 
                     <div className="total-price">
-                        <span>Общее количество {`${totalCount} шт.`} </span>
-                        <span>Сумма заказа {`${totalPrice} ₽`}</span>
+                        <span>Общее количество : {`${totalCount} шт.`} </span>
+                        <span>Сумма заказа : {`${totalPrice} ₽`}</span>
                     </div>
 
                     <div className="nav-buttons">
                         <div className="back">
-                            <NavLink to="/menu">
-                                Вернуться назад
-                    </NavLink>
+                            <NavLink to="/menu">Вернуться назад</NavLink>
                         </div>
                         <div className="buy">
-                            <NavLink to="/">
-                                Оплатить сейчас
-                    </NavLink>
+                            <NavLink to="/">Оплатить сейчас</NavLink>
                         </div>
                     </div>
                 </div>
@@ -92,9 +47,7 @@ export default function Basket() {
                     <h1>В вашей корзине пока ничего нет</h1>
                     <div className="nav-buttons">
                         <div className="back">
-                            <NavLink to="/menu">
-                                Вернуться назад
-                    </NavLink>
+                            <NavLink to="/menu">Вернуться назад</NavLink>
                         </div>
                     </div>
                 </div>

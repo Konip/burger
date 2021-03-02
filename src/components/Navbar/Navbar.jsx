@@ -13,16 +13,15 @@ function Navbar() {
                     <img src={hamburger} alt="hamberger" />
                 </NavLink>
             </div >
-
             <div className="navbar__links">
                 <div className="navbar__link">
-                    <NavLink to="/menu">Menu</NavLink>
+                    <NavLink to="/menu" activeClassName="selected">меню</NavLink>
                 </div>
                 <div className="navbar__link">
-                    <NavLink to="/news">News</NavLink>
+                    <NavLink to="/news" activeClassName="selected">новости</NavLink>
                 </div>
                 <div className="navbar__link">
-                    <NavLink to="/music">Music</NavLink>
+                    <NavLink to="/vacancies" activeClassName="selected">вакансии</NavLink>
                 </div>
             </div>
         </nav>

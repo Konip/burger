@@ -16,24 +16,25 @@ let initialState = {
     totalCount: 0,
     totalPrice: 0,
     totalEntry: [],
-
+    totalInfo: [],
 }
 
-const basket = (state = initialState, action) => {
+const basket = (state = initialState, { type, data }) => {
 
-    switch (action.type) {
+    switch (type) {
         case ADD_BURGER: {
             const items = {
                 ...state.items,
-                [action.data.activeItem]: !state.items[action.data.activeItem]
-                    ? [action.data]
-                    : [...state.items[action.data.activeItem], action.data]
+                [data.activeItem]: !state.items[data.activeItem]
+                    ? [data]
+                    : [...state.items[data.activeItem], data]
             }
 
             const totalBurger = [].concat.apply([], Object.values(items))
             const totalPrice = totalBurger.reduce((sum, obj) => obj.price + sum, 0)
 
             let totalEntry = []
+            let totalInfo = []
 
             totalBurger.map(a => {
 
@@ -42,12 +43,45 @@ const basket = (state = initialState, action) => {
                 if (!totalEntry.includes(a.name)) totalEntry.push(a.name)
 
             })
+
+            for (let index = 0; index < totalEntry.length; index++) {
+                let name = null
+                let count = null
+                let totalPrice = null
+                let img = null
+                let activeItem = null
+                let price = null
+
+                totalBurger.map(a => {
+                    if (a.name === totalEntry[index]) {
+                        name = a.name
+                        img = a.img
+                        totalPrice += a.price
+                        count++
+                        activeItem = a.activeItem
+                        price = a.price
+                    }
+                })
+
+                totalInfo.push({
+                    name: name,
+                    totalPrice: totalPrice,
+                    count: count,
+                    img: img,
+                    activeItem: activeItem,
+                    price: price,
+                })
+            }
+
+            console.log(totalInfo)
+
             return {
                 ...state,
                 items: items,
                 totalCount: totalBurger.length,
                 totalPrice: totalPrice,
                 totalEntry: totalEntry,
+                totalInfo: totalInfo,
             }
         }
         case DELETE_ONE_BURGER: {
@@ -59,16 +93,16 @@ const basket = (state = initialState, action) => {
             let CopyTotalPrice = state.totalPrice
             const arr = []
             let i = false
-            newItems[action.data.activeItem].map(n => {
-                if (n.name !== action.data.name || i === true) arr.push(n)
+            newItems[data.activeItem].map(n => {
+                if (n.name !== data.name || i === true) arr.push(n)
                 else i = true
             })
 
             if (CopyTotalCount > 0) {
                 let j = false
                 let price = 0
-                newItems[action.data.activeItem].map(n => {
-                    if (action.data.price === n.price && action.data.name === n.name) {
+                newItems[data.activeItem].map(n => {
+                    if (data.price === n.price && data.name === n.name) {
                         j = true
                         price = n.price
                     }
@@ -78,25 +112,35 @@ const basket = (state = initialState, action) => {
                     CopyTotalPrice -= price
                 }
             }
-            
-            const totalBurger = [].concat.apply([], Object.values(newItems))
-            let totalEntry = []
-            totalBurger.map(a => {
 
-                if (totalEntry.length == 0) totalEntry.unshift(a.name)
-        
-                if (!totalEntry.includes(a.name)) totalEntry.unshift(a.name)
-        
+            let CopyTotaEntry = state.totalEntry
+            let CopyTotalInfo = state.totalInfo
+            let count = 0
+            CopyTotalInfo.map(c => {
+                // debugger
+                if (data.name === c.name && data.price != c.totalPrice) {
+                    c.totalPrice = c.totalPrice - c.price
+                    c.count--
+                }
+
+                else if (data.name === c.name && data.price === c.totalPrice) {
+                    CopyTotalInfo.splice(count, 1)
+                    CopyTotaEntry.splice(count, 1)
+                }
+
+                count++
             })
+
             return {
                 ...state,
                 items: {
                     ...state.items,
-                    [action.data.activeItem]: arr
+                    [data.activeItem]: arr
                 },
                 totalCount: CopyTotalCount,
                 totalPrice: CopyTotalPrice,
-                totalEntry: totalEntry,
+                totalInfo: CopyTotalInfo,
+                totalEntry: CopyTotaEntry,
             }
         }
 
@@ -109,8 +153,8 @@ const basket = (state = initialState, action) => {
             let CopyTotalCount = state.totalCount
             let CopyTotalPrice = state.totalPrice
 
-            newItems[action.data.activeItem].map(n => {
-                if (n.name !== action.data.name) {
+            newItems[data.activeItem].map(n => {
+                if (n.name !== data.name) {
                     arr.push(n)
                 }
                 else {
@@ -118,14 +162,29 @@ const basket = (state = initialState, action) => {
                     CopyTotalPrice -= n.price
                 }
             })
+
+            let CopyTotaEntry = state.totalEntry
+            let CopyTotalInfo = state.totalInfo
+            let count = 0
+            CopyTotalInfo.map(c => {
+
+                if (data.name === c.name) {
+                    CopyTotalInfo.splice(count, 1)
+                    CopyTotaEntry.splice(count, 1)
+                }
+
+                count++
+            })
             return {
                 ...state,
                 items: {
                     ...state.items,
-                    [action.data.activeItem]: arr
+                    [data.activeItem]: arr
                 },
                 totalCount: CopyTotalCount,
                 totalPrice: CopyTotalPrice,
+                totalInfo: CopyTotalInfo,
+                totalEntry: CopyTotaEntry,
             }
         }
         default:
