@@ -469,15 +469,21 @@
                     }
                 }
                 .app-image {
-                    position: absolute;
+                    
                     top: 0%;
                     left: 55%;
                     z-index: 200;
-
-                    .hand {
-                        width: 50%;
-                        height: 50%;
-                        animation: float 4s ease-in-out infinite;
+                    .wrap {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        .hand {
+                            // position: absolute;
+                            // width: 56%;
+                            // height: 80%;
+                            animation: float 4s ease-in-out infinite;
+                            background-size: cover;
+                        }
                     }
 
                     @keyframes float {

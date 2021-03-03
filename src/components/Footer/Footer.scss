@@ -1,13 +1,71 @@
-.footer{
+.footer {
+    max-width: 1480px;
+    height: 500px;
+    margin: 0 auto;
     position: relative;
-    height: 600px;
-    width: 600px;
-    .cont{
-        h2{
-            color: yellow;
-        }
-        p{
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        h2 {
             color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-size: 30px;
+            font-weight: 300;
+            margin: 25px 0;
+        }
+        p {
+            margin-bottom: 20px;
+            color: white;
+            // font-size: 1em;
+            span {
+                color: red;
+            }
+        }
+        form {
+            display: flex;
+            width: 400px;
+            height: 50px;
+            input {
+                width: 100%;
+                margin: 0 7px;
+                background-color: black;
+                border: 2px solid white;
+            }
+        }
+        .social {
+            display: flex;
+            margin: 60px 0;
+            li {
+                margin: 0 10px;
+                svg {
+                    height: 30px;
+                    width: 30px;
+                }
+                :hover {
+                    svg {
+                        stroke: red;
+                        transition: 0.5s;
+                    }
+                    .insta {
+                        g {
+                            fill: red;
+                            transition: 0.5s;
+                        }
+                    }
+                }
+            }
+            img {
+                height: 30px;
+                width: 30px;
+            }
         }
     }
 }

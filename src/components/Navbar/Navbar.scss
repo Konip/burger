@@ -6,12 +6,16 @@
     &__logo {
         position: relative;
 
-        img {
+        svg {
             height: 70px;
             width: 70px;
             margin-left: 30px;
             margin-top: 15px;
-            
+        }
+
+        :hover {
+            fill: red;
+            transition: 0.5s;
         }
     }
 

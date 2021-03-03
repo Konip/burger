@@ -106,7 +106,10 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="app-image width-half">
+                        <div className="wrap">
                         <img className="hand" src="https://blackstarburger.ru/wp-content/themes/tsumugi-child/img/app/hand.png" alt="" />
+                        </div>
+                       
                     </div>
                 </div>
             </section>
