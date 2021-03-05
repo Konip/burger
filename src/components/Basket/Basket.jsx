@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import BurgerBlockBasket from './BurgerBlockBasket';
-import clearAC from "../../redux/basket"
 import { deleteGroupBurgerAC } from "../../redux/basket"
 import { addBurgerAC, deleteOneBurgerAC } from "../../redux/basket"
 import "./Basket.scss"
@@ -12,7 +11,7 @@ export default function Basket() {
     const dispatch = useDispatch()
     const { items, totalPrice, totalCount, totalInfo } = useSelector(({ basket }) => basket)
 
-   
+
     return (
         <div className="basket">
             {totalInfo.length != 0

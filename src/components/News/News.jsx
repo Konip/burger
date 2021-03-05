@@ -37,8 +37,18 @@ export default function News() {
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
-    
-    // autoplay: true,
+    responsive:[{
+      breakpoint: 1240,
+      settings:{
+        dots: true,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
+      }
+    }]
   };
   return (
     <div className="slider">

@@ -43,7 +43,8 @@
     }
     .slick-slide {
         overflow: hidden;
-        margin: 0 a;
+        margin: 0 auto;
+       
     }
     .slick-slider {
         text-align: center;
@@ -64,8 +65,11 @@
     }
     .slick-next {
         top: -10%;
-        right: 0%;
+        // right: 2vw;
+        height: 20px;
+        width: 110px;
         position: absolute;
+        margin-right: 20px;
     }
 
     .slick-prev {
@@ -73,8 +77,12 @@
         position: absolute;
         left: 95%;
     }
+    .slick-track{
+        visibility: visible;
+    }
     .slick-next::before {
         content: url("../../assets/next.svg");
+        margin-right: 20px;
     }
     .slick-next:hover::before {
         transform: translateX(10px);
@@ -90,5 +98,26 @@
         transform: translateX(-10px);
         transform: scaleX(-1);
         position: absolute;
+    }
+
+    @media (max-width: 1240px) {
+        .slick-track:nth-child(3){
+            visibility:hidden;
+        }
+        // .slick-slide:first-child{
+        //     visibility:hidden;
+        // }
+    }
+
+    @media (max-width: 991px) {
+    }
+
+    @media (max-width: 840px) {
+    }
+
+    @media (max-width: 600px) {
+    }
+
+    @media (max-width: 370px) {
     }
 }

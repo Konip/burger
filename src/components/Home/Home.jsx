@@ -47,8 +47,9 @@ export default function Home() {
                             Доставка еды на ваше мероприятие в любую точку Москвы
                         </div>
 
-                        <div className="btn">
-                            <a href="" className="btn-link">заказать кейтеринг</a>
+                        <div className="btn animation">
+                            <a href="https://catery.ru/caterer/black-star-burger" className="btn-link">
+                            заказать кейтеринг</a>
                         </div>
                     </div>
                 </div>
