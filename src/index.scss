@@ -6,4 +6,10 @@
   font-family: "Roboto", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  body {
+    position: relative;
+    min-width: 100vw;
+    min-height: 100vh;
+  }
 }

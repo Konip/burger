@@ -1,18 +1,39 @@
- @media (max-width: 1240px) {
-        
-    }
+@media (max-width: 1200px) {
     
-    @media (max-width: 991px) {
-      
-    }
+        max-width: 970px;
     
-    @media (max-width: 840px) {
-       
-    }
+}
+
+@media (max-width: 991px) {
     
-    @media (max-width: 600px) {
-        
-    }
+        max-width: 933px;
+}
+
+@media (max-width: 767px) {
     
-    @media (max-width: 370px) {
-      
+        max-width: none;
+   
+}
+
+
+
+
+
+
+      @media (max-width: 1200px) {
+    .vacancies {
+        max-width: 970px;
+    }
+}
+
+@media (max-width: 991px) {
+    .vacancies {
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 767px) {
+    .vacancies {
+        max-width: none;
+    }
+}

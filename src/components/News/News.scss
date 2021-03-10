@@ -44,7 +44,7 @@
     .slick-slide {
         overflow: hidden;
         margin: 0 auto;
-       
+        position: relative;
     }
     .slick-slider {
         text-align: center;
@@ -65,7 +65,7 @@
     }
     .slick-next {
         top: -10%;
-        // right: 2vw;
+        right: 3%;
         height: 20px;
         width: 110px;
         position: absolute;
@@ -75,49 +75,107 @@
     .slick-prev {
         top: -6%;
         position: absolute;
-        left: 95%;
+        left: 80%;
+        height: 20px;
+        width: 110px;
+        margin-right: 20px;
     }
-    .slick-track{
+    .slick-track {
         visibility: visible;
+    }
+    .slick-list {
+        padding: 0 30px;
     }
     .slick-next::before {
         content: url("../../assets/next.svg");
         margin-right: 20px;
     }
-    .slick-next:hover::before {
-        transform: translateX(10px);
-        position: absolute;
-        transition: 1s;
-    }
+
     .slick-prev:before {
         content: url("../../assets/back.svg");
         position: absolute;
         transform: scaleX(-1);
+        margin-right: 20px;
     }
     .slick-prev:hover::before {
         transform: translateX(-10px);
         transform: scaleX(-1);
         position: absolute;
     }
-
-    @media (max-width: 1240px) {
-        .slick-track:nth-child(3){
-            visibility:hidden;
+}
+@media (max-width: 1420px) {
+    .slider {
+        h2 {
+            margin-bottom: 20px;
+            margin-top: 50px;
+            padding-left: 30%;
         }
-        // .slick-slide:first-child{
-        //     visibility:hidden;
-        // }
-    }
+        .card {
+            a {
+                width: 55%;
+            }
+        }
 
-    @media (max-width: 991px) {
+        .slick-next {
+            right: 25%;
+        }
+        .slick-prev {
+            left: 57%;
+        }
+        .slick-slide {
+            margin: 0 auto;
+            width: 50%;
+        }
+        .slick-track {
+            position: relative;
+        }
+        .slick-current {
+            position: absolute;
+            width: 500px;
+        }
     }
+}
+@media (max-width: 1240px) {
+    .slider {
+        max-width: 970px;
+        h2 {
+            padding-left: 20%;
+        }
+        .slick-next {
+            right: 17%;
+        }
 
-    @media (max-width: 840px) {
+        .slick-list {
+            padding: 0px;
+        }
+        .card {
+            a {
+                width: 75%;
+            }
+        }
     }
+}
 
-    @media (max-width: 600px) {
+@media (max-width: 991px) {
+    .slider {
+        max-width: 933px;
+        .slick-list {
+            padding: 0px;
+        }
+        .card {
+            a {
+                width: 93%;
+            }
+        }
     }
+}
 
-    @media (max-width: 370px) {
+@media (max-width: 800px) {
+    .slider {
+        max-width: 600px;
+        // max-width: none;     
+        .slick-list {
+            padding: 0px;
+        }
     }
 }

@@ -1,76 +1,206 @@
-.basket-block {
-    display: flex;
+.string {
+    padding: 15px 0;
     border-top: 2px solid white;
-    border-bottom: 2px solid white;
-    font-size: 23px;
-    // justify-content: space-evenly;
-    align-items: center;
-    height: 100%;
-    width: 900px;
-
-    .wrapper {
-        float: left;
+    .basket-block {
         display: flex;
+        font-size: 23px;
+        // justify-content: space-evenly;
         align-items: center;
         height: 100%;
-        width: 600px;
 
-        &-img {
-            height: 150px;
-            width: 150px;
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-        .title {
-            overflow: hidden;
-            margin-left: 15px;
-        }
-    }
+        .wrapper {
+            float: left;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            width: 600px;
+            // width: 20%;
+            // width: 40em;
 
-    .basket-buttons {
-        display: flex;
-        margin: 0 10px;
-        width: 118px;
-        justify-content: space-around;
-        .info-price {
-            // margin: 0 12px;
+            &-img {
+                height: 120px;
+                width: 150px;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            .title {
+                overflow: hidden;
+                margin-left: 15px;
+            }
         }
-        button {
-            background-color: #4e3e38;
-            color: white;
-            font-size: 16px;
-            height: 35px;
-            width: 35px;
-            border-radius: 30px;
-            border: 2px solid white;
 
-            .svg {
-                height: 10px;
-                width: 10px;
-                margin-bottom: 1px;
+        .basket-buttons {
+            display: flex;
+            margin: 0 10px;
+            width: 118px;
+            justify-content: space-around;
+            .info-price {
+                // margin: 0 12px;
+            }
+            button {
+                background-color: #4e3e38;
+                color: white;
+                font-size: 16px;
+                height: 35px;
+                width: 35px;
+                border-radius: 30px;
+                border: 3px solid white;
+
+                .svg {
+                    height: 10px;
+                    width: 10px;
+                    margin-bottom: 1px;
+                }
+            }
+        }
+        .totalPrice {
+            text-align: center;
+            width: 100px;
+        }
+        .del-buttons {
+            margin-left: 10px;
+            button {
+                background-color: #4e3e38;
+                color: white;
+                font-size: 16px;
+                height: 35px;
+                width: 35px;
+                border-radius: 30px;
+                border: 3px solid white;
+
+                .svg {
+                    height: 13px;
+                    width: 13px;
+                    margin-bottom: 2px;
+                    margin-right: 4px;
+                }
             }
         }
     }
-    p{
-        text-align: center;
-        width: 100px;
-    }
-    .del-buttons {
-        margin-left: 10px;
-        button {
-            background-color: #4e3e38;
-            color: white;
-            font-size: 16px;
-            height: 35px;
-            width: 35px;
-            border-radius: 30px;
-            border: 2px solid white;
+}
 
-            .svg {
-                height: 13px;
-                width: 13px;
-                margin-bottom: 2px;
-                margin-right: 4px;
+@media (max-width: 1480px) {
+    .wrap {
+        // max-width: 1200px;
+    }
+}
+@media (max-width: 1200px) {
+    .wrap {
+        max-width: 780px;
+    }
+}
+
+@media (max-width: 900px) {
+    .wrap {
+        max-width: 780px;
+    }
+    .string {
+        .basket-block {
+            font-size: 21px;
+            .wrapper {
+                width: 360px;
+                .title {
+                    margin: 0 auto;
+                    text-align: center;
+                }
+            }
+            .basket-buttons {
+                width: 100px;
+                button {
+                    height: 30px;
+                    width: 30px;
+                    border: 2px solid white;
+                    .svg {
+                        margin-bottom: 2px;
+                    }
+                }
+            }
+            .del-buttons {
+                button {
+                    height: 30px;
+                    width: 30px;
+                    border: 2px solid white;
+                    .svg {
+                        height: 12px;
+                        width: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 670px) {
+    .string {
+        padding: 5px 0;
+        .basket-block {
+            .wrapper {
+                width: 360px;
+                .title {
+                    overflow: hidden;
+                    font-size: 16px;
+                }
+            }
+            .basket-buttons {
+                margin: unset;
+                button {
+                }
+                .info-price {
+                    font-size: 16px;
+                }
+            }
+            .totalPrice {
+                width: 60px;
+                font-size: 16px;
+            }
+            .del-buttons {
+                margin-left: unset;
+
+                button {
+                    .svg {
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 570px) {
+    .string {
+        padding: unset;
+        .basket-block {
+            .wrapper {
+                width: 200px;
+
+                .title {
+                    font-size: 12px;
+                    margin-left: unset;
+                }
+            }
+            .basket-buttons {
+                button {
+                    height: 25px;
+                    width: 25px;
+                    .svg {
+                        height: 8px;
+                        width: 8px;
+                    }
+                }
+                .info-price {
+                }
+            }
+            .totalPrice {
+                width: 50px;
+            }
+            .del-buttons {
+                button {
+                    height: 25px;
+                    width: 25px;
+                    .svg {
+                        height: 10px;
+                        width: 10px;
+                        margin-bottom: 3px;
+                        margin-right: 3px;
+                    }
+                }
             }
         }
     }

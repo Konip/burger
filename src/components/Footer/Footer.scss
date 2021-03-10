@@ -1,10 +1,8 @@
 .footer {
-    max-width: 1480px;
-    // height: 500px;
     height: 50vh;
-    // margin-top: 10px;
     margin: 0 auto;
     position: relative;
+    width: 100%;
     &-wrapper {
         display: flex;
         flex-direction: column;
@@ -15,6 +13,10 @@
         right: 0;
         left: 0;
         margin: 0 auto;
+        padding: 0 40px;
+        width: 100%;
+        // height: 100%;
+        height: 70%;
         h2 {
             color: white;
             text-transform: uppercase;
@@ -26,7 +28,7 @@
         p {
             margin-bottom: 20px;
             color: white;
-            // font-size: 1em;
+            text-align: center;
             span {
                 color: red;
                 font-size: 1.1em;
@@ -34,7 +36,8 @@
         }
         form {
             display: flex;
-            width: 470px;
+            min-width: 470px;
+            // width: 470px;
             height: 50px;
             input {
                 width: 100%;
@@ -86,6 +89,72 @@
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .footer {
+        &-wrapper {
+            padding: 0 10px;
+            p {
+                font-size: 0.9em;
+            }
+            form {
+                min-width: 0px;
+                height: 120px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                input {
+                    height: 50px;
+                    width: 320px;
+                    margin: 0 0px;
+                }
+                button {
+                    margin: 10px 0;
+                    height: 50px;
+                    width: 138px;
+                }
+            }
+            .social {
+                margin: 20px 0;
+            }
+        }
+    }
+}
+@media (max-width: 320px) {
+    .footer {
+        height: 65vh;
+        &-wrapper {
+            h2 {
+                letter-spacing: 0.1em;
+                font-size: 23px;
+            }
+            form {
+                input {
+                    height: 40px;
+                    font-size: .9em;
+                    width: 260px;
+                }
+                button {
+                    height: 40px;
+                    font-size: .7em;
+                }
+            }
+            .social {
+                li {
+                    margin: 0 10px;
+                    svg {
+                        height: 20px;
+                        width: 20px;
+                    }
+                }
+            }
+            p {
+                font-size: 0.6em;
+                margin-bottom: 10px;
             }
         }
     }

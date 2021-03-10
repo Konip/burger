@@ -28,12 +28,13 @@ export default function BurgerBlock({ name, description, price, img, id,
                 </div>
             </div>
             <div className="buttons">
-
                 <button onClick={() => onClickDel({ name, activeItem, price })}>
                     <img className="svg" src={minus} alt="" />
                     <span>Удалить</span>
                 </button>
-                {`${groupPrice} ₽`}
+                <span className="groupPrice">
+                    {`${groupPrice} ₽`}
+                </span>
                 <button onClick={() => onClickAdd({ name, price, img, activeItem, id })}>
                     <img className="svg" src={plus} alt="" />
                     <span>Добавить</span>

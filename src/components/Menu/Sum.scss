@@ -1,7 +1,9 @@
 .sum {
     position: absolute;
-    right: 38px;
-    top: 52px;
+    // right: 38px;
+    // top: 52px;
+    right: 2%;
+    top: 1.5%;
     display: flex;
     justify-content: space-evenly;
     background-color: #4e3e38;
@@ -10,12 +12,54 @@
     height: 40px;
     width: 155px;
     border-radius: 30px;
-    border: 2px solid white;
+    border: 3px solid white;
     padding-top: 5px;
     &__img {
         img {
             height: 25px;
             width: 25px;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .sum {
+        width: 120px;
+        border: 2px solid white;
+        div:first-child {
+            display: none;
+        }
+    }
+}
+@media (max-width: 500px) {
+    .sum {
+        border: 1px solid white;
+        padding-top: 2px;
+        height: 30px;
+        width: 80px;
+        font-size: 15px;
+
+        div:first-child {
+            display: none;
+        }
+        &__img {
+            img {
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+}
+@media (max-width: 380px) {
+    .sum {
+        padding-top: 3px;
+        height: 25px;
+        width: 60px;
+        font-size: 13px;
+        &__img {
+            img {
+                height: 15px;
+                width: 15px;
+            }
         }
     }
 }

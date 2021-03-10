@@ -9,36 +9,39 @@ export default function BurgerBlockBasket({ name, totalPrice, count, img, onClic
     onClickDelOne, onClickAdd, id, price }) {
 
     return (
-        <div className="basket-block">
+        <div className="string">
+            <div className="basket-block">
 
-            <div className="wrapper">
-                <div className="wrapper-img" style={{ backgroundImage: `url(${img})` }}></div>
-                <div className="title">
-                    {name}
-                </div>
-            </div>
-
-            <div className="basket-buttons">
-
-                <button onClick={() => onClickDelOne({ name, activeItem, price })}>
-                    <img className="svg" src={minus} alt="" /></button>
-
-                <div className="info-price">
-                    {count}
+                <div className="wrapper">
+                    <div className="wrapper-img" style={{ backgroundImage: `url(${img})` }}></div>
+                    <div className="title">
+                        {name}
+                    </div>
                 </div>
 
-                <button onClick={() => onClickAdd({ name, price, img, activeItem, id })}>
-                    <img className="svg" src={plus} alt="" />
-                </button>
-            </div>
+                <div className="basket-buttons">
 
-            <p>{`${totalPrice} ₽`}</p>
+                    <button onClick={() => onClickDelOne({ name, activeItem, price })}>
+                        <img className="svg" src={minus} alt="" /></button>
 
-            <div className="del-buttons">
-                <button onClick={() => onClickDelGroup({ activeItem, name })}>
-                    <img className="svg" src={cross} alt="" />
-                </button>
+                    <div className="info-price">
+                       <p>{count}</p> 
+                    </div>
+
+                    <button onClick={() => onClickAdd({ name, price, img, activeItem, id })}>
+                        <img className="svg" src={plus} alt="" />
+                    </button>
+                </div>
+
+                <p className="totalPrice">{`${totalPrice} ₽`}</p>
+
+                <div className="del-buttons">
+                    <button onClick={() => onClickDelGroup({ activeItem, name })}>
+                        <img className="svg" src={cross} alt="" />
+                    </button>
+                </div>
             </div>
         </div>
+
     )
 }

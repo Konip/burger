@@ -18,12 +18,11 @@ export default function Menu() {
 
     return (
         <div className="menu">
-            {console.log("hello")}
-            <div>
+            {/* <div>
                 <NavLink to="/basket">
                     <Sum totalPrice={totalPrice} totalCount={totalCount} />
                 </NavLink>
-            </div>
+            </div> */}
 
             <div className="categories">
                 {
@@ -31,6 +30,9 @@ export default function Menu() {
                         activeItem={activeItem}
                     />
                 }
+                <NavLink to="/basket">
+                    <Sum totalPrice={totalPrice} totalCount={totalCount} />
+                </NavLink>
             </div>
 
             <div className="content">

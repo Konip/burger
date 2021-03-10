@@ -17,15 +17,18 @@ export default function Basket() {
             {totalInfo.length != 0
                 ?
                 <div className="wrap">
-                    {
-                        totalInfo.map(t => (
-                            <BurgerBlockBasket key={`${t.img}${t.price}`} name={t.name} totalPrice={t.totalPrice}
-                                count={t.count} img={t.img} id={t.id} price={t.price}
-                                activeItem={t.activeItem} onClickDelGroup={i => dispatch(deleteGroupBurgerAC(i))}
-                                onClickAdd={item => dispatch(addBurgerAC(item))} activeItem={t.activeItem}
-                                onClickDelOne={item => dispatch(deleteOneBurgerAC(item))} />
-                        ))
-                    }
+                    <div className="list">
+                        {
+                            totalInfo.map(t => (
+                                <BurgerBlockBasket key={`${t.img}${t.price}`} name={t.name} totalPrice={t.totalPrice}
+                                    count={t.count} img={t.img} id={t.id} price={t.price}
+                                    activeItem={t.activeItem} onClickDelGroup={i => dispatch(deleteGroupBurgerAC(i))}
+                                    onClickAdd={item => dispatch(addBurgerAC(item))} activeItem={t.activeItem}
+                                    onClickDelOne={item => dispatch(deleteOneBurgerAC(item))} />
+                            ))
+                        }
+                    </div>
+
 
                     <div className="total-price">
                         <span>Общее количество : {`${totalCount} шт.`} </span>

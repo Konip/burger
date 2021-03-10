@@ -38,7 +38,7 @@ export default function News() {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive:[{
-      breakpoint: 1240,
+      breakpoint: 1420,
       settings:{
         dots: true,
         infinite: true,
