@@ -79,7 +79,53 @@
         }
     }
 }
-@media (max-width: 500px) {
+@media (max-width: 570px) {
+    .basket {
+        
+        .wrap {
+            h1 {
+                
+            }
+            .nav-buttons {
+                font-size: 17px;
+                .back,
+                .buy {
+                    border: 2px solid white;
+                    height: 60px;
+                    width: 200px;
+                }
+            }
+            .total-price {
+                font-size: 15px;
+            }
+        }
+    }
 }
-@media (max-width: 380px) {
+@media (max-width: 440px) {
+    .basket {
+        
+        .wrap {
+            h1 {
+                
+            }
+            .nav-buttons {
+                flex-direction: column-reverse;
+                align-items: center;
+                
+                .back,
+                .buy {
+                    margin: 10px 0 20px 0;
+                }
+            }
+            .total-price {
+                flex-direction: column;
+                align-items: center;
+                margin: 20px 0 10px 0;
+                
+                span{
+                    margin: 10px 0;
+                }
+            }
+        }
+    }
 }

@@ -4,7 +4,7 @@ import "./Content.scss"
 export default function Tomsk() {
     return (
         <div className="cont-text">
-            <h1>Открытие первого ресторана в г. Томске!</h1>
+            <div className="title">Открытие первого ресторана в г. Томске!</div>
             <img src="https://blackstarburger.ru/wp-content/uploads/2021/03/tomsk_2.jpg" alt="" />
             <div>
                 <p>Друзья, мы рады вам сообщить, что открыли первый ресторан в Томске! 

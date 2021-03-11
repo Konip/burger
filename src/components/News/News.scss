@@ -172,10 +172,60 @@
 
 @media (max-width: 800px) {
     .slider {
-        max-width: 600px;
-        // max-width: none;     
+        max-width: 530px;
+        // max-width: none;
         .slick-list {
             padding: 0px;
+        }
+        .card {
+            a {
+                width: 100%;
+            }
+        }
+    }
+}
+@media (max-width: 640px) {
+    .slider {
+        h2 {
+            text-align: center;
+        }
+        .slick-list {
+            padding: 0px;
+        }
+        .card {
+            a {
+                width: 100%;
+            }
+        }
+        .slick-list {
+            width: 100%;
+            // margin: 0 10px;
+        }
+        .slick-next {
+            top: unset;
+            bottom: -9%;
+            right: 14%;
+            z-index: 20;
+        }
+
+        .slick-prev {
+            top: unset;
+            bottom: -9%;
+            left: 14%;
+            z-index: 20;
+        }
+    }
+}
+@media (max-width: 640px) {
+    .slider {
+        .card {
+            a {
+                .mask {
+                    span {
+                        font-size: 1.9em;
+                    }
+                }
+            }
         }
     }
 }

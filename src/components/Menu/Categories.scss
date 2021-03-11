@@ -73,6 +73,7 @@
 @media (max-width: 500px) {
     .categories {
         .categories__item {
+            margin-left: 20px;
             &-link {
                 font-size: 0.7em;
                 padding: 3px 5px;
@@ -91,11 +92,12 @@
 @media (max-width: 380px) {
     .categories {
         .categories__item {
-            width: 70%;
+            margin-left: 10px;
+            width: 80%;
             &-link {
                 font-size: 0.6em;
                 padding: 2px 3px;
-                margin: 3px 3px;
+                margin: 2px 2px;;
             }
 
             &__basket {

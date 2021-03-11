@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import "./Home.scss"
+import bull from '../../assets/1.png'
 
 export default function Home() {
     return (
@@ -28,9 +29,18 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="info width-half">
-                        <div className="bull"></div>
-                        <div className="bull1"></div>
-                        <div className="bull2"></div>
+                        {/* <img className="bull" src={bull} alt="" />
+                        <img className="bull1" src={bull} alt="" />
+                        <img className="bull2" src={bull} alt="" /> */}
+                        <div className="bull">
+                            <img src={bull} alt="" />
+                        </div>
+                        <div className="bull1">
+                            <img src={bull} alt="" />
+                        </div>
+                        <div className="bull2">
+                            <img src={bull} alt="" />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -49,7 +59,7 @@ export default function Home() {
 
                         <div className="btn animation">
                             <a href="https://catery.ru/caterer/black-star-burger" className="btn-link">
-                            заказать кейтеринг</a>
+                                заказать кейтеринг</a>
                         </div>
                     </div>
                 </div>
@@ -108,9 +118,9 @@ export default function Home() {
                     </div>
                     <div className="app-image width-half">
                         <div className="wrap">
-                        <img className="hand" src="https://blackstarburger.ru/wp-content/themes/tsumugi-child/img/app/hand.png" alt="" />
+                            <img className="hand" src="https://blackstarburger.ru/wp-content/themes/tsumugi-child/img/app/hand.png" alt="" />
                         </div>
-                       
+
                     </div>
                 </div>
             </section>

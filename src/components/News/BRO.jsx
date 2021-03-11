@@ -4,7 +4,7 @@ import "./Content.scss"
 export default function Tomsk() {
     return (
         <div className="cont-text">
-            <h1>Обменяй ненужный подарок на бургер!😎</h1>
+            <div className="title">Обменяй ненужный подарок на бургер!😎</div>
             <img src="https://blackstarburger.ru/wp-content/uploads/2021/02/1400h400-1.jpg" alt="" />
             <div>
                 <p>В честь 23 февраля запускаем акцию. Обменяй новые носки / трусы / пену для

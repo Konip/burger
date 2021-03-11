@@ -28,38 +28,40 @@
                 margin-left: 15px;
             }
         }
-
-        .basket-buttons {
+        .wrapper-info {
             display: flex;
-            margin: 0 10px;
-            width: 118px;
+            // margin: 0 10px;
             justify-content: space-around;
-            .info-price {
-                // margin: 0 12px;
-            }
-            button {
-                background-color: #4e3e38;
-                color: white;
-                font-size: 16px;
-                height: 35px;
-                width: 35px;
-                border-radius: 30px;
-                border: 3px solid white;
+            .basket-buttons {
+                display: flex;
+                margin: 0 10px;
+                width: 118px;
+                justify-content: space-around;
+                .info-price {
+                    // margin: 0 12px;
+                }
+                button {
+                    background-color: #4e3e38;
+                    color: white;
+                    font-size: 16px;
+                    height: 35px;
+                    width: 35px;
+                    border-radius: 30px;
+                    border: 3px solid white;
 
-                .svg {
-                    height: 10px;
-                    width: 10px;
-                    margin-bottom: 1px;
+                    .svg {
+                        height: 10px;
+                        width: 10px;
+                        margin-bottom: 1px;
+                    }
                 }
             }
-        }
-        .totalPrice {
-            text-align: center;
-            width: 100px;
-        }
-        .del-buttons {
-            margin-left: 10px;
-            button {
+            .totalPrice {
+                text-align: center;
+                width: 100px;
+            }
+            .del-buttons {
+                margin-left: 10px;
                 background-color: #4e3e38;
                 color: white;
                 font-size: 16px;
@@ -104,22 +106,23 @@
                     text-align: center;
                 }
             }
-            .basket-buttons {
-                width: 100px;
-                button {
-                    height: 30px;
-                    width: 30px;
-                    border: 2px solid white;
-                    .svg {
-                        margin-bottom: 2px;
+            .wrapper-info {
+                .basket-buttons {
+                    width: 100px;
+                    button {
+                        height: 30px;
+                        width: 30px;
+                        border: 2px solid white;
+                        .svg {
+                            margin-bottom: 2px;
+                        }
                     }
                 }
-            }
-            .del-buttons {
-                button {
+                .del-buttons {
                     height: 30px;
                     width: 30px;
                     border: 2px solid white;
+
                     .svg {
                         height: 12px;
                         width: 12px;
@@ -140,22 +143,22 @@
                     font-size: 16px;
                 }
             }
-            .basket-buttons {
-                margin: unset;
-                button {
+            .wrapper-info {
+                .basket-buttons {
+                    margin: unset;
+                    button {
+                    }
+                    .info-price {
+                        font-size: 16px;
+                    }
                 }
-                .info-price {
+                .totalPrice {
+                    width: 60px;
                     font-size: 16px;
                 }
-            }
-            .totalPrice {
-                width: 60px;
-                font-size: 16px;
-            }
-            .del-buttons {
-                margin-left: unset;
+                .del-buttons {
+                    margin-left: unset;
 
-                button {
                     .svg {
                     }
                 }
@@ -168,37 +171,79 @@
         padding: unset;
         .basket-block {
             .wrapper {
-                width: 200px;
+                width: 215px;
 
                 .title {
                     font-size: 12px;
                     margin-left: unset;
                 }
             }
-            .basket-buttons {
-                button {
-                    height: 25px;
-                    width: 25px;
-                    .svg {
-                        height: 8px;
-                        width: 8px;
+            .wrapper-info {
+                .basket-buttons {
+                    width: 80px;
+                    button {
+                        height: 25px;
+                        width: 25px;
+                        .svg {
+                            height: 8px;
+                            width: 8px;
+                        }
+                    }
+                    .info-price {
                     }
                 }
-                .info-price {
+                .totalPrice {
+                    width: 50px;
                 }
-            }
-            .totalPrice {
-                width: 50px;
-            }
-            .del-buttons {
-                button {
+                .del-buttons {
                     height: 25px;
                     width: 25px;
+
                     .svg {
                         height: 10px;
                         width: 10px;
                         margin-bottom: 3px;
                         margin-right: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 440px) {
+    .string {
+        .basket-block {
+            flex-direction: column;
+            padding: 10px 0;
+            .wrapper {
+                width: 215px;
+                .title {
+                    margin: 0 auto;
+                }
+                &-img {
+                    height: 80px;
+                    width: 130px;
+                }
+            }
+            .wrapper-info {
+                margin: 15px;
+                width: 80%;
+                .basket-buttons {
+                    width: 80px;
+                    button {
+                        .svg {
+                        }
+                    }
+                    .info-price {
+                        font-size: 14px;
+                        margin-top: 2px;
+                    }
+                }
+                .totalPrice {
+                    font-size: 14px;
+                }
+                .del-buttons {
+                    .svg {
                     }
                 }
             }

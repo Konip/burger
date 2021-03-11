@@ -182,7 +182,7 @@
                     position: relative;
 
                     .bull {
-                        background-image: url("https://blackstarburger.ru/wp-content/themes/tsumugi-child/img/about/1.png");
+                        // background-image: url("https://blackstarburger.ru/wp-content/themes/tsumugi-child/img/about/1.png");
                         height: 100%;
                         width: 100%;
                         background-repeat: no-repeat;
@@ -190,6 +190,30 @@
                         background-position: bottom center;
                         animation: bull 0s 0s linear reverse infinite;
                         position: absolute;
+                        // left: 20%;
+                    }
+
+                    .bull1 {
+                        // background-image: url("https://blackstarburger.ru/wp-content/themes/tsumugi-child/img/about/1.png");
+                        height: 100%;
+                        width: 100%;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: bottom center;
+                        animation: bull1 1s 0s linear reverse infinite;
+                        position: absolute;
+                        // left: 20%;
+                    }
+                    .bull2 {
+                        // background-image: url("https://blackstarburger.ru/wp-content/themes/tsumugi-child/img/about/1.png");
+                        height: 100%;
+                        width: 100%;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: bottom center;
+                        animation: bull2 1s 0s linear reverse infinite;
+                        position: absolute;
+                        // left: 20%;
                     }
                     @keyframes bull {
                         0% {
@@ -209,16 +233,6 @@
                             clip: rect(432px, auto, 1001px, 4px);
                         }
                     }
-                    .bull1 {
-                        background-image: url("https://blackstarburger.ru/wp-content/themes/tsumugi-child/img/about/1.png");
-                        height: 100%;
-                        width: 100%;
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                        background-position: bottom center;
-                        animation: bull1 1s 0s linear reverse infinite;
-                        position: absolute;
-                    }
                     @keyframes bull1 {
                         0% {
                             clip: rect(132px, auto, 101px, 4px);
@@ -236,16 +250,6 @@
                         100% {
                             clip: rect(6302px, auto, 1001px, 4px);
                         }
-                    }
-                    .bull2 {
-                        background-image: url("https://blackstarburger.ru/wp-content/themes/tsumugi-child/img/about/1.png");
-                        height: 100%;
-                        width: 100%;
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                        background-position: bottom center;
-                        animation: bull2 1s 0s linear reverse infinite;
-                        position: absolute;
                     }
                     @keyframes bull2 {
                         0% {
@@ -529,9 +533,6 @@
                         padding-top: 10%;
                         margin-left: 12%;
                         .hand {
-                            // position: absolute;
-                            // width: 56%;
-                            // height: 80%;
                             height: 100%;
                             width: 100%;
                             animation: float 4s ease-in-out infinite;
@@ -567,6 +568,11 @@
                     .text {
                         line-height: 1.5;
                         font-size: 1.2em;
+                    }
+                    .bull,
+                    .bull1,
+                    .bull2 {
+                        width: 80%;
                     }
                 }
                 .catering-info {
@@ -713,12 +719,21 @@
                     .text {
                         text-align: center;
                     }
-                    .bull,
+                    .bull {
+                        position: relative;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        height: 100%;
+                        width: auto;
+                        img {
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
                     .bull1,
                     .bull2 {
-                        height: 100%;
-                        top: 0%;
-                        left: 0%;
+                        display: none;
                     }
                     .h2 {
                         text-align: center;
@@ -737,7 +752,6 @@
                         .hand {
                             // height: 90%;
                             width: 60%;
-                           
                         }
                     }
                 }

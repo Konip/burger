@@ -4,7 +4,7 @@ import "./Content.scss"
 export default function Double() {
     return (
         <div className="cont-text">
-            <h1>Сделаем твой бургер двойным – бесплатно!</h1>
+            <div className="title">Сделаем твой бургер двойным – бесплатно!</div>
             <img src="https://blackstarburger.ru/wp-content/uploads/2021/02/banner_1440h400.jpg" alt="" />
             <div>
                 <p>23 февраля всем защитникам добавляем вторую котлету в соччный, мощщный за свой счет.
