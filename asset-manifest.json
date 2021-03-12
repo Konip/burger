@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/Konip/burger/static/css/main.54da68d9.chunk.css",
+    "main.js": "/Konip/burger/static/js/main.e48cb026.chunk.js",
+    "main.js.map": "/Konip/burger/static/js/main.e48cb026.chunk.js.map",
+    "runtime-main.js": "/Konip/burger/static/js/runtime-main.67288de0.js",
+    "runtime-main.js.map": "/Konip/burger/static/js/runtime-main.67288de0.js.map",
+    "static/css/2.d28c6d12.chunk.css": "/Konip/burger/static/css/2.d28c6d12.chunk.css",
+    "static/js/2.78601b1c.chunk.js": "/Konip/burger/static/js/2.78601b1c.chunk.js",
+    "static/js/2.78601b1c.chunk.js.map": "/Konip/burger/static/js/2.78601b1c.chunk.js.map",
+    "index.html": "/Konip/burger/index.html",
+    "static/css/2.d28c6d12.chunk.css.map": "/Konip/burger/static/css/2.d28c6d12.chunk.css.map",
+    "static/css/main.54da68d9.chunk.css.map": "/Konip/burger/static/css/main.54da68d9.chunk.css.map",
+    "static/js/2.78601b1c.chunk.js.LICENSE.txt": "/Konip/burger/static/js/2.78601b1c.chunk.js.LICENSE.txt",
+    "static/media/1.eef4c9bb.png": "/Konip/burger/static/media/1.eef4c9bb.png",
+    "static/media/News.scss": "/Konip/burger/static/media/next.d4f764df.svg",
+    "static/media/basket.b9563a75.svg": "/Konip/burger/static/media/basket.b9563a75.svg",
+    "static/media/cross.64198544.svg": "/Konip/burger/static/media/cross.64198544.svg",
+    "static/media/hamburger.3c1295e5.svg": "/Konip/burger/static/media/hamburger.3c1295e5.svg",
+    "static/media/minus.1906131a.svg": "/Konip/burger/static/media/minus.1906131a.svg",
+    "static/media/plus.fa0470b4.svg": "/Konip/burger/static/media/plus.fa0470b4.svg",
+    "static/media/slick-theme.css": "/Konip/burger/static/media/slick.c94f7671.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.67288de0.js",
+    "static/css/2.d28c6d12.chunk.css",
+    "static/js/2.78601b1c.chunk.js",
+    "static/css/main.54da68d9.chunk.css",
+    "static/js/main.e48cb026.chunk.js"
+  ]
+}
