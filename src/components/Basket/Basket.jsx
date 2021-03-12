@@ -9,12 +9,12 @@ import { NavLink } from 'react-router-dom';
 
 export default function Basket() {
     const dispatch = useDispatch()
-    const { items, totalPrice, totalCount, totalInfo } = useSelector(({ basket }) => basket)
+    const { totalPrice, totalCount, totalInfo } = useSelector(({ basket }) => basket)
 
 
     return (
         <div className="basket">
-            {totalInfo.length != 0
+            {totalInfo.length !== 0
                 ?
                 <div className="wrap">
                     <div className="list">

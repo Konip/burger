@@ -1,6 +1,5 @@
 import React from 'react'
 import "./Categories.scss"
-import { classNames } from 'classnames';
 
 export default function Categories({ item, onClickItem, activeItem }) {
     return (

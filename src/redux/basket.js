@@ -38,10 +38,10 @@ const basket = (state = initialState, { type, data }) => {
 
             totalBurger.map(a => {
 
-                if (totalEntry.length == 0) totalEntry.push(a.name)
+                if (totalEntry.length === 0) totalEntry.push(a.name)
 
                 if (!totalEntry.includes(a.name)) totalEntry.push(a.name)
-
+                    
             })
 
             for (let index = 0; index < totalEntry.length; index++) {
@@ -72,8 +72,6 @@ const basket = (state = initialState, { type, data }) => {
                     price: price,
                 })
             }
-
-            console.log(totalInfo)
 
             return {
                 ...state,
@@ -118,7 +116,7 @@ const basket = (state = initialState, { type, data }) => {
             let count = 0
             CopyTotalInfo.map(c => {
                 // debugger
-                if (data.name === c.name && data.price != c.totalPrice) {
+                if (data.name === c.name && data.price !== c.totalPrice) {
                     c.totalPrice = c.totalPrice - c.price
                     c.count--
                 }
