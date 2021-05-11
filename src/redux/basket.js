@@ -1,6 +1,9 @@
 const ADD_BURGER = "ADD_BURGER"
 const DELETE_ONE_BURGER = "DELETE_BURGER"
 const DELETE_GROUP_BURGER = "DELETE_GROUP_BURGER"
+const TOGGLE = "TOGGLE"
+const INCRE = "INCRE"
+const PRICE = "PRICE"
 
 let initialState = {
     items: {
@@ -17,6 +20,9 @@ let initialState = {
     totalPrice: 0,
     totalEntry: [],
     totalInfo: [],
+    toggle: false,
+    incre: true,
+    price: true,
 }
 
 const basket = (state = initialState, { type, data }) => {
@@ -41,7 +47,7 @@ const basket = (state = initialState, { type, data }) => {
                 if (totalEntry.length === 0) totalEntry.push(a.name)
 
                 if (!totalEntry.includes(a.name)) totalEntry.push(a.name)
-                    
+
             })
 
             for (let index = 0; index < totalEntry.length; index++) {
@@ -141,7 +147,6 @@ const basket = (state = initialState, { type, data }) => {
                 totalEntry: CopyTotaEntry,
             }
         }
-
         case DELETE_GROUP_BURGER: {
             const newItems = {
                 ...state.items
@@ -185,6 +190,15 @@ const basket = (state = initialState, { type, data }) => {
                 totalEntry: CopyTotaEntry,
             }
         }
+        case TOGGLE: {
+            return { ...state, toggle: data }
+        }
+        case INCRE: {
+            return { ...state, incre: data }
+        }
+        case PRICE: {
+            return { ...state, price: data }
+        }
         default:
             return state
     }
@@ -193,3 +207,6 @@ export default basket
 export const addBurgerAC = (data) => ({ type: ADD_BURGER, data })
 export const deleteOneBurgerAC = (data) => ({ type: DELETE_ONE_BURGER, data })
 export const deleteGroupBurgerAC = (data) => ({ type: DELETE_GROUP_BURGER, data })
+export const toggleAC = (data) => ({ type: TOGGLE, data })
+export const incrementAC = (data) => ({ type: INCRE, data })
+export const priceAC = (data) => ({ type: PRICE, data })

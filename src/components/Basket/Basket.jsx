@@ -2,16 +2,50 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import BurgerBlockBasket from './BurgerBlockBasket';
 import { deleteGroupBurgerAC } from "../../redux/basket"
-import { addBurgerAC, deleteOneBurgerAC } from "../../redux/basket"
+import { addBurgerAC, deleteOneBurgerAC, toggleAC, priceAC, incrementAC } from "../../redux/basket"
 import "./Basket.scss"
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import CountUp from 'react-countup'
 
+let key1
 
 export default function Basket() {
     const dispatch = useDispatch()
-    const { totalPrice, totalCount, totalInfo } = useSelector(({ basket }) => basket)
+    const { totalPrice, totalCount, totalInfo, toggle, price, incre } = useSelector(({ basket }) => basket)
 
+    let start = 0
+    let end = 0
 
+    function group(total) {
+        if (incre) {
+            return (
+                start = total - price,
+                end = total
+            )
+        }
+        else if (!incre) {
+            return (
+                start = total + price,
+                end = total
+            )
+        }
+    }
+
+    function LastPrice(item, event) {
+        key1 = item.name
+        if (event === 'add') {
+            dispatch(addBurgerAC(item))
+            dispatch(incrementAC(true))
+
+        }
+        else if (event === 'del') {
+            dispatch(deleteOneBurgerAC(item))
+            dispatch(incrementAC(false))
+
+        }
+        dispatch(toggleAC(true))
+        dispatch(priceAC(item.price))
+    }
     return (
         <div className="basket">
             {totalInfo.length !== 0
@@ -20,27 +54,37 @@ export default function Basket() {
                     <div className="list">
                         {
                             totalInfo.map(t => (
-                                <BurgerBlockBasket key={`${t.img}${t.price}`} name={t.name} totalPrice={t.totalPrice}
+                                <BurgerBlockBasket key={`${t.img}${t.price}`} name={t.name} totalPrice={group(t.totalPrice)}
                                     count={t.count} img={t.img} id={t.id} price={t.price}
                                     activeItem={t.activeItem} onClickDelGroup={i => dispatch(deleteGroupBurgerAC(i))}
-                                    onClickAdd={item => dispatch(addBurgerAC(item))} activeItem={t.activeItem}
-                                    onClickDelOne={item => dispatch(deleteOneBurgerAC(item))} />
+                                    onClickAdd={item => LastPrice(item, 'add')} activeItem={t.activeItem}
+                                    onClickDelOne={item => LastPrice(item, 'del')}
+                                    toggle={toggle} incre={incre} key1={key1} start={start} end={end}
+                                />
                             ))
                         }
                     </div>
 
-
                     <div className="total-price">
                         <span>Общее количество : {`${totalCount} шт.`} </span>
-                        <span>Сумма заказа : {`${totalPrice} ₽`}</span>
+                        {totalPrice
+                            ?
+                            incre
+                                ?
+                                <CountUp start={toggle ? totalPrice - price : totalPrice} end={totalPrice} duration={1} suffix=" ₽" />
+                                :
+                                <CountUp start={toggle ? totalPrice + price : totalPrice} end={totalPrice} duration={1} suffix=" ₽" />
+                            :
+                            `${totalPrice} ₽`
+                        }
                     </div>
 
-                    <div className="nav-buttons">
+                    <div className="nav-buttons" onClick={() => dispatch(toggleAC(false))}>
                         <div className="back">
-                            <NavLink to="/menu">Вернуться назад</NavLink>
+                            <Link to="/menu">Вернуться назад</Link>
                         </div>
                         <div className="buy">
-                            <NavLink to="/">Оплатить сейчас</NavLink>
+                            <Link to="/">Оплатить сейчас</Link>
                         </div>
                     </div>
                 </div>
@@ -49,7 +93,7 @@ export default function Basket() {
                     <h1>В вашей корзине пока ничего нет</h1>
                     <div className="nav-buttons">
                         <div className="back">
-                            <NavLink to="/menu">Вернуться назад</NavLink>
+                            <Link to="/menu">Вернуться назад</Link>
                         </div>
                     </div>
                 </div>

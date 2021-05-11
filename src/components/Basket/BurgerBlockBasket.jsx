@@ -3,10 +3,10 @@ import "./BurgerBlockBasket.scss"
 import plus from "../../assets/plus.svg"
 import minus from "../../assets/minus.svg"
 import cross from "../../assets/cross.svg"
-
+import CountUp from 'react-countup'
 
 export default function BurgerBlockBasket({ name, totalPrice, count, img, onClickDelGroup, activeItem,
-    onClickDelOne, onClickAdd, id, price }) {
+    onClickDelOne, onClickAdd, id, price, incre, toggle, key1, start, end }) {
 
     return (
         <div className="string">
@@ -33,8 +33,14 @@ export default function BurgerBlockBasket({ name, totalPrice, count, img, onClic
                         </button>
                     </div>
 
-                    <p className="totalPrice">{`${totalPrice} ₽`}</p>
-
+                    <p className="totalPrice">
+                        {toggle && name === key1
+                            ?
+                            <CountUp start={start} end={end} duration={1} suffix=" ₽" />
+                            :
+                            `${totalPrice} ₽`
+                        }
+                    </p>
 
                     <button className="del-buttons" onClick={() => onClickDelGroup({ activeItem, name })}>
                         <img className="svg" src={cross} alt="" />
@@ -44,6 +50,5 @@ export default function BurgerBlockBasket({ name, totalPrice, count, img, onClic
 
             </div>
         </div>
-
     )
 }

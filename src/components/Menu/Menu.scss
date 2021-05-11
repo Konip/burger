@@ -1,4 +1,6 @@
 .menu {
+    position: relative;
+    width: 100vw;
     .categories {
     }
     .content {
@@ -8,4 +10,10 @@
        
         // justify-content: center;
     }
+    // .bottom{
+    //     position: fixed;
+    //     bottom: 50px;
+    //     right: 0;
+    //     height: 50px;
+    // }
 }

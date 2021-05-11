@@ -1,14 +1,17 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { toggleAC } from "../../redux/basket"
 import "./Navbar.scss"
 
 function Navbar() {
+    const dispatch = useDispatch()
     return (
         <nav className="navbar">
 
             <div className="navbar__logo">
 
-                <NavLink to="/">
+                <NavLink to="/" onClick={() => dispatch(toggleAC(false))}>
                     <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="256.000000pt" height="256.000000pt" viewBox="0 0 256.000000 256.000000" preserveAspectRatio="xMidYMid meet">
 
                         <g transform="translate(0.000000,256.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
@@ -29,20 +32,19 @@ function Navbar() {
 0 770 0 0 -42z" />
                         </g>
                     </svg>
-
                 </NavLink>
 
 
             </div >
             <div className="navbar__links">
                 <div className="navbar__link">
-                    <NavLink to="/menu" activeClassName="selected">меню</NavLink>
+                    <NavLink to="/menu" activeClassName="selected" onClick={() => dispatch(toggleAC(false))}>меню</NavLink>
                 </div>
                 <div className="navbar__link">
-                    <NavLink to="/news" activeClassName="selected">новости</NavLink>
+                    <NavLink to="/news" activeClassName="selected" onClick={() => dispatch(toggleAC(false))}>новости</NavLink>
                 </div>
                 <div className="navbar__link">
-                    <NavLink to="/vacancies" activeClassName="selected">вакансии</NavLink>
+                    <NavLink to="/vacancies" activeClassName="selected" onClick={() => dispatch(toggleAC(false))}>вакансии</NavLink>
                 </div>
             </div>
         </nav>

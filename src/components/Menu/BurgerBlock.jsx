@@ -2,10 +2,11 @@ import React from 'react'
 import "./BurgerBlock.scss"
 import plus from "../../assets/plus.svg"
 import minus from "../../assets/minus.svg"
+import CountUp from 'react-countup'
 
 export default function BurgerBlock({ name, description, price, img, id,
-    activeItem, onClickAdd, onClickDel, count, groupPrice }) {
-
+    activeItem, onClickAdd, onClickDel, count, groupPrice, toggle, start, end, key1 }) {
+    
     return (
         <div className="block">
 
@@ -28,12 +29,18 @@ export default function BurgerBlock({ name, description, price, img, id,
                 </div>
             </div>
             <div className="buttons">
-                <button onClick={() => onClickDel({ name, activeItem, price })}>
+                <button onClick={groupPrice !== 0 ? () => onClickDel({ name, activeItem, price, groupPrice }) : null}>
                     <img className="svg" src={minus} alt="" />
                     <span>Удалить</span>
                 </button>
+
                 <span className="groupPrice">
-                    {`${groupPrice} ₽`}
+                    {toggle && name === key1
+                        ?
+                        <CountUp start={start} end={end} duration={1} suffix=" ₽" />
+                        :
+                        `${groupPrice} ₽`
+                    }
                 </span>
                 <button onClick={() => onClickAdd({ name, price, img, activeItem, id })}>
                     <img className="svg" src={plus} alt="" />
@@ -42,6 +49,5 @@ export default function BurgerBlock({ name, description, price, img, id,
                 </button>
             </div>
         </div>
-
     )
 }
