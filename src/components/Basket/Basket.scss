@@ -24,8 +24,8 @@
         }
         .nav-buttons {
             display: flex;
-            justify-content: center;
-
+            justify-content: space-between;
+            margin-bottom: 50px;
             .back,
             .buy {
                 border: 3px solid white;
@@ -42,8 +42,31 @@
                     color: inherit;
                     align-items: center;
                     justify-content: center;
+                    text-align: center;
+                    img {
+                        width: 24px;
+                        height: 24px;
+                    }
                 }
             }
+            .back {
+                p {
+                    padding-right: 5px;
+                }
+            }
+
+            .buy {
+                a img {
+                    margin-top: 5px;
+                }
+                p {
+                    padding-left: 5px;
+                }
+            }
+        }
+        .one {
+            font-size: 20px;
+            background: black;
         }
     }
 }
@@ -55,7 +78,7 @@
 }
 @media (max-width: 1200px) {
     .wrap {
-        max-width: 780px;
+        // max-width: 780px;
     }
 }
 
@@ -74,19 +97,38 @@
                     width: 250px;
                 }
             }
+            .one {
+                justify-content: center;
+            }
             .total-price {
                 // padding: 0 15px;
             }
         }
     }
 }
-@media (max-width: 570px) {
+@media (max-width: 600px) {
     .basket {
+        min-height: 100%;
         .wrap {
-            h1 {
+            min-height: 100%;
+            .list {
+                width: 90%;
+                margin: 0 auto;
             }
             .nav-buttons {
                 font-size: 17px;
+                position: sticky;
+                bottom: 0;
+                left: 0;
+                background: black;
+                // background: #191212;
+                // background: #2e1b1b;
+                // background: #452525;
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                padding: 15px 5px;
+                margin-bottom: unset;
                 .back,
                 .buy {
                     border: 2px solid white;
@@ -94,26 +136,9 @@
                     width: 200px;
                 }
             }
-            .total-price {
-                font-size: 15px;
+            .one {
             }
-        }
-    }
-}
-@media (max-width: 440px) {
-    .basket {
-        .wrap {
-            h1 {
-            }
-            .nav-buttons {
-                flex-direction: column-reverse;
-                align-items: center;
 
-                .back,
-                .buy {
-                    margin: 10px 0 20px 0;
-                }
-            }
             .total-price {
                 flex-direction: column;
                 align-items: center;
@@ -123,6 +148,43 @@
                     margin: 10px 0;
                 }
             }
+        }
+    }
+}
+@media (max-width: 480px) {
+    .basket {
+        .wrap {
+            h1 {
+            }
+            .nav-buttons {
+                padding: 15px 5px;
+                // flex-direction: column-reverse;
+                // align-items: center;
+
+                .back,
+                .buy {
+                    margin: 0px 5px 0px 5px;
+                    // width: 130px;
+                }
+                .back {
+                    // margin-right: 10px;
+                }
+            }
+            .one {
+                .back {
+                    // margin: 10px 0 20px 0;
+                    width: 200px;
+                }
+            }
+            // .total-price {
+            //     flex-direction: column;
+            //     align-items: center;
+            //     margin: 20px 0 10px 0;
+
+            //     span {
+            //         margin: 10px 0;
+            //     }
+            // }
         }
     }
 }

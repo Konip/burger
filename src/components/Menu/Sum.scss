@@ -32,7 +32,7 @@
     }
 }
 .sum-bottom {
-    // display: none;
+    display: none;
     .sum {
         bottom: 3%;
         right: 4%;
@@ -40,9 +40,6 @@
         width: 80px;
         // width: 120px;
         border: 2px solid white;
-        div:first-child {
-            display: none;
-        }
     }
 }
 
@@ -64,9 +61,9 @@
         width: 80px;
         font-size: 15px;
 
-        div:first-child {
-            display: none;
-        }
+        // div:first-child {
+        //     display: none;
+        // }
         &__img {
             img {
                 height: 20px;

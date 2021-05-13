@@ -14,12 +14,12 @@
     .title {
         margin: 30px 0;
         font-size: 3em;
+        text-align: center;
     }
     p {
         font-size: 1.7em;
         margin: 30px 0;
         line-height: 1.7em;
-        
     }
     li {
         font-size: 1.7em;
@@ -27,13 +27,15 @@
     img {
         width: 100%;
     }
+    ul{
+        line-height: 1.5em;
+    }
 }
 @media (max-width: 500px) {
     .cont-text {
-       .title{
-        font-size: 2em;
-        text-align: center;
-       }
+        .title {
+            font-size: 2em;
+        }
         p {
             font-size: 1.1rem;
             line-height: 1.7em;

@@ -23,7 +23,7 @@
         flex-direction: row;
         justify-content: center;
         width: 100%;
-        margin-top: 10px;
+        margin-top: 20px;
     }
 
     &__link {
@@ -65,15 +65,16 @@
 @media (max-width: 767px) {
 }
 @media (max-width: 500px) {
-    .navbar{
-        margin-bottom: 0px;
+    .navbar {
+        &__links {
+            margin-top: 15px;
+        }
         &__link {
             padding: 10px;
-           font-size: .6em;
+            font-size: 0.7em;
         }
         &__logo {
             a {
-               
                 svg {
                     height: 40px;
                     width: 40px;
@@ -84,5 +85,41 @@
         }
     }
 }
-@media (max-width: 320px) {
+@media (max-width: 330px) {
+    .navbar {
+        &__links {
+            margin-top: 10px;
+        }
+        &__link {
+            font-size: 0.6em;
+        }
+        &__logo {
+            a {
+                svg {
+                    height: 40px;
+                    width: 40px;
+                    margin-left: 7px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 280px) {
+    .navbar {
+        margin-bottom: 4px;
+        &__link {
+            font-size: 0.5em;
+        }
+        &__logo {
+            a {
+                svg {
+                    height: 40px;
+                    width: 40px;
+                    margin-left: 5px;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
 }

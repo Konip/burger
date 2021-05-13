@@ -172,7 +172,7 @@
 
 @media (max-width: 800px) {
     .slider {
-        max-width: 530px;
+        max-width: calc(100% - 20px);
         // max-width: none;
         .slick-list {
             padding: 0px;
@@ -188,43 +188,83 @@
     .slider {
         h2 {
             text-align: center;
+            padding-left: 0%;
         }
-        .slick-list {
-            padding: 0px;
-        }
-        .card {
-            a {
-                width: 100%;
+        .slick-slider {
+            // max-width: calc(100% - 20px);
+            margin: 0 auto;
+
+            .slick-list {
+                padding: 0px;
+
+                // width: 100%;
+            }
+            .card {
+                a {
+                    width: 100%;
+                    .mask {
+                        span {
+                            font-size: 1.9em;
+                        }
+                    }
+                }
+            }
+
+            .slick-next {
+                top: unset;
+                bottom: -10%;
+                right: 14%;
+                z-index: 20;
+            }
+
+            .slick-prev {
+                top: unset;
+                bottom: -10%;
+                left: 14%;
+                z-index: 20;
             }
         }
-        .slick-list {
-            width: 100%;
-            // margin: 0 10px;
-        }
-        .slick-next {
-            top: unset;
-            bottom: -9%;
-            right: 14%;
-            z-index: 20;
-        }
+    }
+    .slick-slide img {
+        width: 99%;
+    }
+}
+@media (max-width: 580px) {
+    .slider {
+        .slick-slider {
+            .slick-next {
+                top: unset;
+                // bottom: -6%;
+                right: 1%;
+                z-index: 20;
+            }
 
-        .slick-prev {
-            top: unset;
-            bottom: -9%;
-            left: 14%;
-            z-index: 20;
+            .slick-prev {
+                top: unset;
+                // bottom: -6%;
+                left: 1%;
+                z-index: 20;
+                width: 40px;
+            }
         }
     }
 }
-@media (max-width: 640px) {
+@media (max-width: 325px) {
     .slider {
-        .card {
-            a {
-                .mask {
-                    span {
-                        font-size: 1.9em;
-                    }
-                }
+        .slick-slider {
+            .slick-next {
+                top: unset;
+                bottom: -15%;
+                right: 0%;
+                z-index: 20;
+                margin-right: 0px;
+            }
+
+            .slick-prev {
+                top: unset;
+                bottom: -15%;
+                left: -8%;
+                z-index: 20;
             }
         }
     }

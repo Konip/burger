@@ -3,6 +3,38 @@ import { NavLink } from 'react-router-dom'
 import "./Home.scss"
 import bull from '../../assets/1.png'
 
+window.onscroll = () => {
+    const windowVerticalScroll = window.scrollY;
+    // const page = document.querySelector('.width-half')
+    // let page1 = page.getBoundingClientRect().top;
+    // console.log('относительно верха', page1);
+    // console.log(page1 - windowVerticalScroll);
+    // console.log(windowVerticalScroll);
+    // console.log(page1.top - (windowVerticalScroll / 2));
+    let count = 0
+    const half1 = document.querySelectorAll('.width-half')
+    const half = half1[count].getBoundingClientRect().top;
+    console.log(half);
+    // let css = half.setAttribute("style", "visibility:visible;animationDelay:2s");
+    // console.log(half);
+    // console.log(  half[0]);
+
+    if ((half - windowVerticalScroll) / 2 < 0) {
+        half1[count].classList.add('a')
+        count++
+    }
+    // if ((half - windowVerticalScroll) / 2 < 0) {
+
+    //     half1[count].setAttribute("style", "animation-play-state: running;");
+    //     count++
+    //     half1[count].setAttribute("style", "animation-play-state: running;animationDelay:1s;");
+    //     // half.setAttribute("style", "animation-play-state: running;");
+    //     count ++
+    //     console.log(half1[3].style);
+    // }
+}
+
+
 export default function Home() {
     return (
         <div className="home">
@@ -17,7 +49,9 @@ export default function Home() {
 
             <section className="page-section">
                 <div className="container">
-                    <div className="info width-half">
+                    <div className="info width-half"
+                    //  style={{animationDelay: `${0.5}s`}}
+                    >
                         <div className="title glitch" data-text="О НАС">О НАС</div>
                         <div className="text">
                             Burger – народный ресторан, создающий продукт премиального качества
@@ -28,10 +62,9 @@ export default function Home() {
                             своей вкусной философией. Соччный! Мощщный!
                         </div>
                     </div>
-                    <div className="info width-half">
-                        {/* <img className="bull" src={bull} alt="" />
-                        <img className="bull1" src={bull} alt="" />
-                        <img className="bull2" src={bull} alt="" /> */}
+                    <div className="info width-half"
+                    //  style={{animationDelay: `${2}s`}}
+                    >
                         <div className="bull">
                             <img src={bull} alt="" />
                         </div>

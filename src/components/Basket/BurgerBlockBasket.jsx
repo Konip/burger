@@ -2,7 +2,8 @@ import React from 'react'
 import "./BurgerBlockBasket.scss"
 import plus from "../../assets/plus.svg"
 import minus from "../../assets/minus.svg"
-import cross from "../../assets/cross.svg"
+// import cross from "../../assets/cross.svg"
+import cross from "../../assets/x.svg"
 import CountUp from 'react-countup'
 
 export default function BurgerBlockBasket({ name, totalPrice, count, img, onClickDelGroup, activeItem,

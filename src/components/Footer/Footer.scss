@@ -95,7 +95,7 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .footer {
         &-wrapper {
             padding: 0 10px;
@@ -127,7 +127,7 @@
 }
 @media (max-width: 320px) {
     .footer {
-        height: 65vh;
+        height: 40vh;
         &-wrapper {
             h2 {
                 letter-spacing: 0.1em;

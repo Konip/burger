@@ -4,10 +4,9 @@ import bakset from '../../assets/basket.svg'
 import CountUp from 'react-countup'
 
 export default function Sum({ totalPrice, totalCount, price, toggle, incre }) {
-    // console.log(totalPrice);
+
     return (
         <div className="sum">
-
             {totalPrice
                 ?
                 incre

@@ -8,7 +8,7 @@ export default function Categories({ item, onClickItem, activeItem }) {
                 item.map((i, index) => (
                     <li className={i === activeItem ? `categories__item-link active` : `categories__item-link`}
                         key={index} onClick={onClickItem ? () => onClickItem(i) : null}>
-                        <span>{i}</span>
+                        <p>{i}</p>
                     </li>
                 ))
             }

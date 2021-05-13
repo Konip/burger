@@ -30,7 +30,7 @@ export default function BurgerBlock({ name, description, price, img, id,
             </div>
             <div className="buttons">
                 <button onClick={groupPrice !== 0 ? () => onClickDel({ name, activeItem, price, groupPrice }) : null}>
-                    <img className="svg" src={minus} alt="" />
+                    <img className="svg del" src={minus} alt="" />
                     <span>Удалить</span>
                 </button>
 

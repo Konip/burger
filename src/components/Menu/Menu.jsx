@@ -4,6 +4,7 @@ import Categories from './Categories'
 import "./Menu.scss"
 import db from "../../db.json"
 import Sum from './Sum'
+import SumBottom from './SumBottom'
 import { useDispatch, useSelector } from 'react-redux';
 import { addBurgerAC, deleteOneBurgerAC, toggleAC, incrementAC, priceAC } from "../../redux/basket"
 import { NavLink } from 'react-router-dom'
@@ -27,7 +28,7 @@ export default function Menu() {
     function group(name) {
         groupPrice = 0
         if (totalEntry.includes(name)) {
-            console.log(totalEntry.includes(name));
+
             groupPrice = totalInfo[totalEntry.indexOf(name)].totalPrice
             if (incre) {
                 return (
@@ -41,7 +42,6 @@ export default function Menu() {
                     end = groupPrice
                 )
             }
-            // else { return 0 }
         }
         else if (lastBurgerPrice === price && lastBurgerName === name) {
             return (
@@ -53,7 +53,7 @@ export default function Menu() {
     }
 
     function LastPrice(item, event) {
-                key1 = item.name
+        key1 = item.name
         if (event === 'add') {
             dispatch(addBurgerAC(item))
             dispatch(incrementAC(true))
@@ -87,7 +87,7 @@ export default function Menu() {
                     />
                 }
                 <NavLink className='sum-nav' to="/basket" onClick={() => addToggle()}>
-                    <Sum totalPrice={totalPrice} totalCount={totalCount} toggle={toggle} incre={incre} price={price} />
+                    <Sum totalPrice={totalPrice} totalCount={totalCount} toggle={toggle} incre={incre} price={price}  />
                 </NavLink>
             </div>
 
@@ -100,22 +100,16 @@ export default function Menu() {
                             onClickDel={item => LastPrice(item, 'del')}
                             count={totalEntry.includes(el.name) ? totalInfo[totalEntry.indexOf(el.name)].count : 0}
                             groupPrice={group(el.name)} key1={key1}
-                            // groupPrice={ totalEntry.includes(el.name) ? totalInfo[totalEntry.indexOf(el.name)].totalPrice : 0}
                             toggle={toggle} start={start} end={end}
                         />
                     ))
                 }
             </div>
 
-            <NavLink className='sum-bottom' to="/basket">
-                <Sum totalPrice={totalPrice} totalCount={totalCount} />
+            <NavLink className='sum-bottom' to="/basket" onClick={() => addToggle()} >
+                <SumBottom totalCount={totalCount} />
             </NavLink>
 
-            {/* <div className="bottom">
-                <NavLink className='sum-bottom' to="/basket">
-                    <Sum totalPrice={totalPrice} totalCount={totalCount} />
-                </NavLink>
-            </div> */}
         </div>
     )
 }

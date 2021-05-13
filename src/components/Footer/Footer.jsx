@@ -8,8 +8,8 @@ export default function Footer() {
                 <h2>Подписаться</h2>
                 <p>Получите скидку 300 <span>₽</span> на свою первую покупку!
                     Подпишитесь на обновления</p>
-                <form className="email" action="">
-                    <input type="email" placeholder="Введите адрес эл. почты" required/>
+                <form className="email" action="../php/mail.php" method="POST"> 
+                    <input type="text" placeholder="Введите адрес эл. почты" name="user_email"/>
                     <button type="submit">Подписаться</button>
                 </form>
                 <ul className="social">

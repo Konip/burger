@@ -6,6 +6,8 @@ import { addBurgerAC, deleteOneBurgerAC, toggleAC, priceAC, incrementAC } from "
 import "./Basket.scss"
 import { Link } from 'react-router-dom';
 import CountUp from 'react-countup'
+import left from '../../assets/chevron-left.svg'
+import right from '../../assets/chevron-right.svg'
 
 let key1
 
@@ -71,29 +73,38 @@ export default function Basket() {
                             ?
                             incre
                                 ?
-                                <CountUp start={toggle ? totalPrice - price : totalPrice} end={totalPrice} duration={1} suffix=" ₽" />
+                                <span>Сумма заказа :  <CountUp start={toggle ? totalPrice - price : totalPrice} end={totalPrice} duration={1} suffix=" ₽" /></span>
                                 :
-                                <CountUp start={toggle ? totalPrice + price : totalPrice} end={totalPrice} duration={1} suffix=" ₽" />
+                                <span>Сумма заказа :   <CountUp start={toggle ? totalPrice + price : totalPrice} end={totalPrice} duration={1} suffix=" ₽" /></span>
                             :
-                            `${totalPrice} ₽`
+                            <span>Сумма заказа : {`${totalPrice} ₽`}</span>
                         }
                     </div>
 
                     <div className="nav-buttons" onClick={() => dispatch(toggleAC(false))}>
                         <div className="back">
-                            <Link to="/menu">Вернуться назад</Link>
+                            <Link to="/menu">
+                                <img src={left} alt="" />
+                                <p>Вернуться назад</p>
+                                </Link>
                         </div>
                         <div className="buy">
-                            <Link to="/">Оплатить сейчас</Link>
+                            <Link to="/">
+                                <p>Оплатить сейчас</p>
+                                <img src={right} alt="" />
+                            </Link>
                         </div>
                     </div>
                 </div>
                 :
                 <div className="wrap">
                     <h1>В вашей корзине пока ничего нет</h1>
-                    <div className="nav-buttons">
+                    <div className="nav-buttons one">
                         <div className="back">
-                            <Link to="/menu">Вернуться назад</Link>
+                            <Link to="/menu">
+                                <img src={left} alt="" />
+                                <p>Вернуться назад</p>
+                            </Link>
                         </div>
                     </div>
                 </div>
