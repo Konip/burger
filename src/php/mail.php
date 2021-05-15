@@ -32,5 +32,8 @@ $mail->AltBody = '';
 
 if(!$mail->send()) {
     echo 'Error';
-} 
+} else{
+    header("Location:\public\index.html");
+    // print 'horocho';
+}
 ?>

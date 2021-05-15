@@ -1,15 +1,18 @@
 import React from 'react'
 import "./Footer.scss"
+// fetch()
 
-export default function Footer() {
+export default function Footer({pathname}) {
+    // console.log(pathname);
     return (
         <footer className="footer">
             <div className="footer-wrapper">
                 <h2>Подписаться</h2>
                 <p>Получите скидку 300 <span>₽</span> на свою первую покупку!
                     Подпишитесь на обновления</p>
-                <form className="email" action="../php/mail.php" method="POST"> 
-                    <input type="text" placeholder="Введите адрес эл. почты" name="user_email"/>
+                <form className="email" method='GET' >
+
+                    <input type="text" placeholder="Введите адрес эл. почты" name="user_email" />
                     <button type="submit">Подписаться</button>
                 </form>
                 <ul className="social">

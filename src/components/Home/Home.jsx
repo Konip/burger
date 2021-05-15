@@ -14,7 +14,7 @@ window.onscroll = () => {
     let count = 0
     const half1 = document.querySelectorAll('.width-half')
     const half = half1[count].getBoundingClientRect().top;
-    console.log(half);
+    // console.log(half);
     // let css = half.setAttribute("style", "visibility:visible;animationDelay:2s");
     // console.log(half);
     // console.log(  half[0]);
