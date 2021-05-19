@@ -11,19 +11,9 @@ import News from './components/News/News';
 import Tomsk from './components/News/Tomsk';
 import Double from './components/News/Double';
 import BRO from './components/News/BRO';
-import {start} from '../src/back/index.js'
 
 function App() {
   let { pathname } = useLocation();
-
-  React.useEffect(() => {
-    // fetch('http://localhost:3000/burger')
-    //   // .then(res => res.json())
-    //   .then(res => { 
-    //     console.log(res);
-    //   })
-    start()
-  }, [])
 
   return (
     <div className="App">
@@ -37,7 +27,7 @@ function App() {
       <Route exact path="/bro" component={BRO} />
       <Route path="/vacancies" component={Vacancies} />
       {pathname !== '/basket' &&
-        <Footer pathname={pathname} />
+        <Footer />
       }
     </div>
   );

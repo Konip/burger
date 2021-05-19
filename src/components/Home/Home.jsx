@@ -1,41 +1,48 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import "./Home.scss"
-import bull from '../../assets/1.png'
+import AOS from 'aos';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import bull from '../../assets/1.png';
+import "./Home.scss";
+import 'aos/dist/aos.css';
 
-window.onscroll = () => {
-    const windowVerticalScroll = window.scrollY;
-    // const page = document.querySelector('.width-half')
-    // let page1 = page.getBoundingClientRect().top;
-    // console.log('относительно верха', page1);
-    // console.log(page1 - windowVerticalScroll);
-    // console.log(windowVerticalScroll);
-    // console.log(page1.top - (windowVerticalScroll / 2));
-    let count = 0
-    const half1 = document.querySelectorAll('.width-half')
-    const half = half1[count].getBoundingClientRect().top;
-    // console.log(half);
-    // let css = half.setAttribute("style", "visibility:visible;animationDelay:2s");
-    // console.log(half);
-    // console.log(  half[0]);
 
-    if ((half - windowVerticalScroll) / 2 < 0) {
-        half1[count].classList.add('a')
-        count++
-    }
-    // if ((half - windowVerticalScroll) / 2 < 0) {
 
-    //     half1[count].setAttribute("style", "animation-play-state: running;");
-    //     count++
-    //     half1[count].setAttribute("style", "animation-play-state: running;animationDelay:1s;");
-    //     // half.setAttribute("style", "animation-play-state: running;");
-    //     count ++
-    //     console.log(half1[3].style);
-    // }
-}
+// window.onscroll = () => {
+//     const windowVerticalScroll = window.scrollY;
+//     // const page = document.querySelector('.width-half')
+//     // let page1 = page.getBoundingClientRect().top;
+//     // console.log('относительно верха', page1);
+//     // console.log(page1 - windowVerticalScroll);
+//     // console.log(windowVerticalScroll);
+//     // console.log(page1.top - (windowVerticalScroll / 2));
+//     let count = 0
+//     const half1 = document.querySelectorAll('.width-half')
+//     const half = half1[count].getBoundingClientRect().top;
+//     // console.log(half);
+//     // let css = half.setAttribute("style", "visibility:visible;animationDelay:2s");
+//     // console.log(half);
+//     // console.log(  half[0]);
+
+//     if ((half - windowVerticalScroll) / 2 < 0) {
+//         half1[count].classList.add('a')
+//         count++
+//     }
+//     // if ((half - windowVerticalScroll) / 2 < 0) {
+
+//     //     half1[count].setAttribute("style", "animation-play-state: running;");
+//     //     count++
+//     //     half1[count].setAttribute("style", "animation-play-state: running;animationDelay:1s;");
+//     //     // half.setAttribute("style", "animation-play-state: running;");
+//     //     count ++
+//     //     console.log(half1[3].style);
+//     // }
+// }
 
 
 export default function Home() {
+    AOS.init({
+        once: true,
+    });
     return (
         <div className="home">
 
@@ -47,10 +54,12 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="page-section">
+            <section className="page-section" >
                 <div className="container">
                     <div className="info width-half"
-                    //  style={{animationDelay: `${0.5}s`}}
+                        data-aos="fade-up"
+                        data-aos-anchor-placement="top-center"
+                        data-aos-duration="900"
                     >
                         <div className="title glitch" data-text="О НАС">О НАС</div>
                         <div className="text">
@@ -63,7 +72,10 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="info width-half"
-                    //  style={{animationDelay: `${2}s`}}
+                        data-aos="fade-up"
+                        data-aos-anchor-placement="top-center"
+                        data-aos-delay="400"
+                        data-aos-duration="900"
                     >
                         <div className="bull">
                             <img src={bull} alt="" />
@@ -80,16 +92,23 @@ export default function Home() {
 
             <section className="page-section">
                 <div className="container">
-                    <div className="catering-image width-half">
+                    <div className="catering-image width-half"
+                        data-aos="fade-up"
+                        data-aos-anchor-placement="top-center"
+                        data-aos-duration="900"
+                    >
                         <img src="https://blackstarburger.ru/wp-content/themes/tsumugi-child/img/catering.png" alt="" />
                     </div>
-                    <div className="catering-info width-half">
-
+                    <div className="catering-info width-half"
+                        data-aos="fade-up"
+                        data-aos-anchor-placement="top-center"
+                        data-aos-delay="400"
+                        data-aos-duration="900"
+                    >
                         <div className="h">кейтеринг</div>
                         <div className="text">
                             Доставка еды на ваше мероприятие в любую точку Москвы
                         </div>
-
                         <div className="btn animation">
                             <a href="https://catery.ru/caterer/black-star-burger" className="btn-link">
                                 заказать кейтеринг</a>

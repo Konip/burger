@@ -96,44 +96,8 @@
                     width: 50%;
                     justify-content: center;
                     align-items: center;
-
-                    // animation-play-state: paused;
-                    // animation-delay: 0s;
-                    // /* animation-duration: 0.45s; */
-                    // animation-duration: 1.5s;
-                    // animation-fill-mode: both;
-                    // animation-name: card;
-                    // @keyframes card {
-                    //     0% {
-                    //         opacity: 0;
-                    //         transform: translate3d(0, 20px, 0);
-                    //     }
-
-                    //     100% {
-                    //         opacity: 1;
-                    //         transform: translate3d(0, 0, 0);
-                    //     }
-                    // }
                 }
-                .a{
-                    animation-play-state: paused;
-                    animation-delay: 0s;
-                    /* animation-duration: 0.45s; */
-                    animation-duration: 1.5s;
-                    animation-fill-mode: both;
-                    animation-name: card;
-                    @keyframes card {
-                        0% {
-                            opacity: 0;
-                            transform: translate3d(0, 20px, 0);
-                        }
 
-                        100% {
-                            opacity: 1;
-                            transform: translate3d(0, 0, 0);
-                        }
-                    }
-                }
                 .catering-image {
                     img {
                         width: 100%;
@@ -689,10 +653,6 @@
                         width: 80%;
                         top: 7%;
                         left: 17%;
-                    }
-                    .bull,
-                    .bull1,
-                    .bull2 {
                         img {
                             width: 100%;
                         }
@@ -774,12 +734,8 @@
                     }
                     .bull {
                         position: relative;
-                        // left: 0;
-                        // right: 0;
-                        // margin: 0 auto;
-                        text-align: center;
+                        // text-align: initial;
                         height: 100%;
-                        // width: auto;
                         img {
                             height: 100%;
                             width: 70%;
@@ -911,6 +867,11 @@
                         &-link {
                             font-size: 0.9em;
                         }
+                    }
+                }
+                .app-image {
+                    .wrap {
+                        margin-left: 9%;
                     }
                 }
             }
